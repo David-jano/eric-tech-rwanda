@@ -1,14 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 
-
 const FeaturedProducts = () => {
   const products = [
     {
       id: 1,
       name: "iPhone 15 Pro Max",
-      description: "Latest flagship with titanium design",
-      price: "$1,199",
+      description: "Latest flagship with titanium design", // No need to escape here, since it's a text string
+      price: "$1199",
       image: "/images/1 (3).jpg",
       alt: "iPhone 15 Pro Max"
     },
@@ -16,7 +15,7 @@ const FeaturedProducts = () => {
       id: 2,
       name: "MacBook Pro M3",
       description: "Powerful performance for professionals",
-      price: "$1,999",
+      price: "$1999",
       image: "/images/1 (2).webp",
       alt: "MacBook Pro M3"
     },
@@ -31,15 +30,15 @@ const FeaturedProducts = () => {
     {
       id: 4,
       name: "Samsung Galaxy S24 Ultra",
-      description: "AI-powered photography and S Pen",
-      price: "$1,299",
+      description: "AI-powered photography and S Pen", // If you have apostrophes here, replace with &apos; or &#39;
+      price: "$1299",
       image: "/images/1 (1).jpg",
       alt: "Samsung Galaxy S24 Ultra"
     }
   ];
 
   return (
-    <section className="py-16 bg-gray-50 bg-white">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -52,17 +51,13 @@ const FeaturedProducts = () => {
             <div key={product.id} className="bg-white rounded-lg hover:shadow-lg border border-gray-200 transition-shadow duration-300 overflow-hidden">
               {/* Product Image */}
               <div className="w-full h-48 bg-gray-100 overflow-hidden">
-               
-
-                    <Image 
-                    src={product.image} 
-                    alt={product.alt} 
-                    layout="responsive"  // or "intrinsic", depending on your need
-                    width={500}  // specify width
-                    height={300}  // specify height
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-
+                <Image 
+                  src={product.image} 
+                  alt={product.alt} 
+                  width={500}  // specify width
+                  height={300}  // specify height
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
               </div>
               
               {/* Product Details */}
