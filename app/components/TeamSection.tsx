@@ -25,7 +25,7 @@ const SocialIcon = ({ platform, color }: { platform: string, color: string }) =>
 const teamMembers = [
   {
     id: 1,
-    name: "Michael Rodriguez",
+    name: "Jean Claude Fiacre",
     role: "CEO & Founder",
     description: "15+ years in tech industry. Passionate about bringing cutting-edge technology to everyone. Former Apple and Samsung executive.",
     imagePath: "/profiles/owner.jpg",
@@ -36,7 +36,7 @@ const teamMembers = [
   },
   {
     id: 2,
-    name: "Sarah Kim",
+    name: "David ISHIMWE",
     role: "Head of Technology",
     description: "MIT graduate with expertise in AI and hardware integration. Leads our product evaluation and tech innovation initiatives.",
     imagePath: "/profiles/me.jpg",
@@ -47,7 +47,7 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: "David Thompson",
+    name: "Marie UMUTONI",
     role: "Sales Director",
     description: "10+ years in electronics retail. Expert in matching customers with perfect tech solutions. Builds lasting relationships with clients.",
     imagePath: "/profiles/seller.webp",
@@ -58,8 +58,8 @@ const teamMembers = [
   },
   {
     id: 4,
-    name: "Emily Chen",
-    role: "Customer Success Manager",
+    name: "SANO Emelyne",
+    role: "Accountant",
     description: "Dedicated to customer satisfaction with background in technical support. Ensures every customer has an amazing experience.",
     imagePath: "/profiles/acc.webp",
     social: [
@@ -104,7 +104,7 @@ const TeamSection = () => {
 
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-blue-600 font-semibold mb-4 text-sm uppercase tracking-wide">{member.role}</p>
+                  <p className="text-blue-800 font-semibold mb-4 text-sm uppercase tracking-wide">{member.role}</p>
                   <p className="text-gray-600 text-sm mb-6 flex-grow leading-relaxed">{member.description}</p>
 
                   <div className="flex justify-center space-x-4 pt-4 border-t border-gray-100">
@@ -130,7 +130,7 @@ const TeamSection = () => {
       </section>
 
       {/* Join Our Team Section */}
-      <section className="bg-gradient-to-r from-blue-50 to-indigo-100 py-16 px-4 w-full md:w-1/3 rounded-md mx-auto bg-white">
+      <section className=" py-16 px-4 w-full  rounded-md mx-auto bg-white">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Join Our Team</h2>
           <p className="text-lg text-black mb-10 max-w-2xl mx-auto leading-relaxed">

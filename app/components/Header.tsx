@@ -19,7 +19,7 @@ const Header = () => {
               <Zap className="w-6 h-6" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">ERIC TECH</h1>
+              <h1 className="text-xl font-bold text-gray-900">ERIC Tech Rwanda</h1>
             </div>
           </div>
           
@@ -42,7 +42,7 @@ const Header = () => {
             <div className="relative w-64">
               <input
                 type="text"
-                placeholder="Search products..."
+                placeholder="Search service..."
                 className="w-full px-4 py-2 pl-10 pr-4 text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:bg-white"
               />
               <div className="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -126,7 +126,7 @@ const Header = () => {
             <div className="relative">
               <input
                 type="text"
-                placeholder="Search products..."
+                placeholder="Search service..."
                 className="w-full px-4 py-3 pl-10 pr-4 text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:bg-white"
               />
               <div className="absolute inset-y-0 left-0 flex items-center pl-3">

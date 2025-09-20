@@ -7,6 +7,10 @@ import WhyChooseUs from './components/WhyChooseUs';
 import FeaturedProducts from './components/FeaturedProducts';
 import FeaturesBar from './components/FeaturesBa';
 import TeamSection from './components/TeamSection';
+import TestimonialsCarousel from './components/TestimonialsCarousel'
+import FAQSection from './components/FAQSection'
+import SocialMediaSection from './components/SocialMediaSection'
+import CommentSection from './components/CommentSection'
 
 const EricTechWebsite = () => {
   const products = [
@@ -93,42 +97,19 @@ const EricTechWebsite = () => {
       {/* Hero Section */}
       <HeroSection />
       <WhyChooseUs />
-      <FeaturedProducts/>
+      <FeaturedProducts />
       <br />
       <FeaturesBar />
       
       {/* Team Section */}
-      <TeamSection />
+      
 
-      {/* Customer Testimonials */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Customers Say</h2>
-            <p className="text-xl text-gray-600">Read reviews from satisfied customers who trust ERIC TECH for their technology needs.</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-xl">
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-500 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-4 italic">&quot;{testimonial.text}&quot;</p>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-600">Verified Buyer</p>
-                  </div>
-                  <span className="text-sm text-gray-500">{testimonial.date}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsCarousel />
+      <TeamSection/>
+      <FAQSection/>
+      <CommentSection/>
+      <SocialMediaSection/>
+      
     </div>
   );
 };
