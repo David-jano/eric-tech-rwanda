@@ -1,5 +1,6 @@
 import React from 'react';
 import { Shield, Award, Truck, Zap, Headphones, RotateCcw } from 'lucide-react';
+/* eslint-disable react/no-unescaped-entities */
 
 const WhyChooseUs = () => {
   return (
@@ -125,7 +126,7 @@ const WhyChooseUs = () => {
                 Easy Returns
               </h3>
               <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300 text-center">
-                Hassle-free 30-day return policy with free return shipping. Not satisfied? We'll make it right with full refunds or exchanges.
+                Hassle-free 30-day return policy with free return shipping. Not satisfied? We will make it right with full refunds or exchanges.
               </p>
             </div>
           </div>
