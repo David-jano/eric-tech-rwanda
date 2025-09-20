@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from 'react';
-import { Star, ShoppingCart, Truck, Shield, Headphones, RotateCcw, Zap, Award, Clock } from 'lucide-react';
+import React from 'react';
+import { Star } from 'lucide-react';  // Only import the necessary icons
 import HeroSection from './components/HelloSection';
 import WhyChooseUs from './components/WhyChooseUs';
 import FeaturedProducts from './components/FeaturedProducts';
@@ -9,8 +9,6 @@ import FeaturesBar from './components/FeaturesBa';
 import TeamSection from './components/TeamSection';
 
 const EricTechWebsite = () => {
-  const [activeTab, setActiveTab] = useState('home');
-
   const products = [
     {
       id: 1,
@@ -92,17 +90,15 @@ const EricTechWebsite = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-     
       {/* Hero Section */}
-      <HeroSection/>
-      <WhyChooseUs/>
+      <HeroSection />
+      <WhyChooseUs />
       <FeaturedProducts/>
-      <br/>
-      <FeaturesBar/>
+      <br />
+      <FeaturesBar />
       
-       {/* Team Section */}
-      <TeamSection/>
-
+      {/* Team Section */}
+      <TeamSection />
 
       {/* Customer Testimonials */}
       <section className="py-16 bg-white">
@@ -120,7 +116,7 @@ const EricTechWebsite = () => {
                     <Star key={i} className="w-5 h-5 text-yellow-500 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
+                <p className="text-gray-700 mb-4 italic">&quot;{testimonial.text}&quot;</p>
                 <div className="flex justify-between items-center">
                   <div>
                     <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
@@ -133,12 +129,6 @@ const EricTechWebsite = () => {
           </div>
         </div>
       </section>
-
-     
-    
-
-      {/* Footer */}
-      
     </div>
   );
 };
