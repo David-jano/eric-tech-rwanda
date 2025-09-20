@@ -134,7 +134,7 @@ const TeamSection = () => {
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Join Our Team</h2>
           <p className="text-lg text-black mb-10 max-w-2xl mx-auto leading-relaxed">
-            We're always looking for passionate individuals who share our love for technology
+            We are always looking for passionate individuals who share our love for technology
             and excellent customer service.
           </p>
           <button className="group bg-blue-600 text-white font-semibold py-3 px-8 rounded-md hover:bg-blue-500 transition-all duration-300 flex items-center justify-center mx-auto shadow-lg hover:shadow-xl">

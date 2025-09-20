@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from 'next/image';
+
 
 const FeaturedProducts = () => {
   const products = [
@@ -50,11 +52,17 @@ const FeaturedProducts = () => {
             <div key={product.id} className="bg-white rounded-lg hover:shadow-lg border border-gray-200 transition-shadow duration-300 overflow-hidden">
               {/* Product Image */}
               <div className="w-full h-48 bg-gray-100 overflow-hidden">
-                <img 
-                  src={product.image} 
-                  alt={product.alt}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
+                import Image from 'next/image';
+
+                    <Image 
+                    src={product.image} 
+                    alt={product.alt} 
+                    layout="responsive"  // or "intrinsic", depending on your need
+                    width={500}  // specify width
+                    height={300}  // specify height
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+
               </div>
               
               {/* Product Details */}
