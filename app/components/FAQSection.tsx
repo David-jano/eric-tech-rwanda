@@ -20,11 +20,11 @@ const FAQSection = () => {
     },
     {
       question: "Are your products covered by warranty?",
-      answer: "Yes, all our products come with a manufacturer's warranty. The duration varies by product but typically ranges from 1-3 years. Please register your product on our website to activate your warranty."
+      answer: "Yes, all our products come with a manufacturer warranty. The duration varies by product but typically ranges from 1-3 years. Please register your product on our website to activate your warranty."
     },
     {
       question: "Do you offer Delivering?",
-      answer: "Once your order ships, you'll receive a confirmation email with a tracking number. You can also track your order by logging into your account on our website."
+      answer: "Once your order ships, you will receive a confirmation email with a tracking number. You can also track your order by logging into your account on our website."
     },
     {
       question: "What payment methods do you accept?",
@@ -78,7 +78,7 @@ const FAQSection = () => {
 
         <div className="mt-12 text-center">
           <p className="text-gray-600 mb-6">
-            Still have questions? We're here to help!
+            Still have questions? We are here to help!
           </p>
           <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
             Contact Support

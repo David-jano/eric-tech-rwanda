@@ -41,7 +41,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 4,
-    text: "I've been shopping at ERIC TECH for years. They always have the latest gadgets and their staff is incredibly knowledgeable.",
+    text: "I have been shopping at ERIC TECH for years. They always have the latest gadgets and their staff is incredibly knowledgeable.",
     name: "Sarah UWIMPUWE",
     date: "April 12, 2023",
     image: "/profiles/acc.webp",
@@ -77,7 +77,7 @@ const TestimonialsCarousel = () => {
 
     const scrollContainer = scrollContainerRef.current;
     let animationFrameId: number;
-    let scrollSpeed = 1; // Pixels per frame
+    const scrollSpeed = 1; // Pixels per frame (use const)
 
     const animateScroll = () => {
       if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
@@ -137,7 +137,7 @@ const TestimonialsCarousel = () => {
               
               <div className="relative mb-4 flex-grow">
                 <FaQuoteLeft className="text-blue-200 text-2xl mb-2" />
-                <p className="text-gray-700 text-sm italic">"{testimonial.text}"</p>
+                <p className="text-gray-700 text-sm italic">&quot;{testimonial.text}&quot;</p>
               </div>
               
               <div className="text-xs text-gray-500 mt-auto">
