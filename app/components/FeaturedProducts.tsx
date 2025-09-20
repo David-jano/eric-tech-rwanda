@@ -52,7 +52,7 @@ const FeaturedProducts = () => {
             <div key={product.id} className="bg-white rounded-lg hover:shadow-lg border border-gray-200 transition-shadow duration-300 overflow-hidden">
               {/* Product Image */}
               <div className="w-full h-48 bg-gray-100 overflow-hidden">
-                import Image from 'next/image';
+               
 
                     <Image 
                     src={product.image} 
