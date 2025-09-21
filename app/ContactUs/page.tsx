@@ -75,7 +75,7 @@ const ContactSection = () => {
             </h1>
           </div>
           <p className="text-xl md:text-2xl text-black max-w-3xl mx-auto leading-relaxed">
-            Ready to transform your tech experience? Let's connect and bring your vision to life with 
+            Ready to transform your tech experience? Let connect and bring your vision to life with 
             <span className=" bg-gradient-to-r from-[#4B73FF] to-[#06B6D4] bg-clip-text text-transparent font-semibold"> ERIC Tech Twanda</span>
           </p>
         </div>
@@ -204,7 +204,7 @@ const ContactSection = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-black mb-2">Email Us</h3>
                     <p className="text-gray-700 text-lg">erictech007@gmail.com</p>
-                    <p className="text-sm text-gray-600 mt-1">We'll respond within 24 hours</p>
+                    <p className="text-sm text-gray-600 mt-1">We will respond within 24 hours</p>
                   </div>
                 </div>
               </div>
