@@ -1,6 +1,8 @@
 "use client";
+
 import React, { useState } from 'react';
 import { ShoppingCart, Zap, Menu, X } from 'lucide-react';
+import Link from 'next/link';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,23 +24,20 @@ const Header = () => {
               <h1 className="text-xl font-bold text-gray-900">ERIC Tech Rwanda</h1>
             </div>
           </div>
-          
+
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex space-x-8">
-            <a href="/" className="text-gray-700 hover:text-gray-500 font-medium">Home</a>
-            <a href="/AboutSection" className="text-gray-700 hover:text-gray-500 font-medium">About us</a>
-            <a href="/ServicesSection" className="text-gray-700 hover:text-gray-500 font-medium">Services</a>
-            <a href="#school" className="text-gray-700 hover:text-gray-500 font-medium">ECT TVET School</a>
-            <a href="#internship" className="text-gray-700 hover:text-gray-500 font-medium">Internship</a>
-            <a href="./ContactUs" className="text-gray-700 hover:text-gray-500 font-medium">Contacts</a>
+            <Link href="/" className="text-gray-700 hover:text-gray-500 font-medium">Home</Link>
+            <Link href="/AboutSection" className="text-gray-700 hover:text-gray-500 font-medium">About us</Link>
+            <Link href="/ServicesSection" className="text-gray-700 hover:text-gray-500 font-medium">Services</Link>
+            <Link href="/#school" className="text-gray-700 hover:text-gray-500 font-medium">ECT TVET School</Link>
+            <Link href="/#internship" className="text-gray-700 hover:text-gray-500 font-medium">Internship</Link>
+            <Link href="/ContactUs" className="text-gray-700 hover:text-gray-500 font-medium">Contacts</Link>
           </nav>
-          
+
           {/* Desktop ShoppingCart and Search Bar */}
           <div className="hidden md:flex items-center space-x-4">
-            {/* ShoppingCart */}
             <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-blue-600 cursor-pointer" />
-            
-            {/* Search Bar */}
             <div className="relative w-64">
               <input
                 type="text"
@@ -78,50 +77,50 @@ const Header = () => {
           <div className="pb-4 border-t border-gray-200 pt-4">
             {/* Mobile Navigation Links */}
             <nav className="flex flex-col space-y-3 mb-4">
-              <a 
-                href="#home" 
+              <Link
+                href="/"
                 className="text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
-              </a>
-              <a 
-                href="#about" 
+              </Link>
+              <Link
+                href="/AboutSection"
                 className="text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About us
-              </a>
-              <a 
-                href="#services" 
+              </Link>
+              <Link
+                href="/ServicesSection"
                 className="text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Services
-              </a>
-              <a 
-                href="#school" 
+              </Link>
+              <Link
+                href="/#school"
                 className="text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 ECT TVET School
-              </a>
-              <a 
-                href="#internship" 
+              </Link>
+              <Link
+                href="/#internship"
                 className="text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Internship
-              </a>
-              <a 
-                href="#contact" 
+              </Link>
+              <Link
+                href="/ContactUs"
                 className="text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contacts
-              </a>
+              </Link>
             </nav>
-            
+
             {/* Mobile Search Bar */}
             <div className="relative">
               <input
