@@ -25,12 +25,12 @@ const Header = () => {
           
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-gray-500 font-medium">Home</a>
-            <a href="#about" className="text-gray-700 hover:text-gray-500 font-medium">About us</a>
-            <a href="#services" className="text-gray-700 hover:text-gray-500 font-medium">Services</a>
+            <a href="/" className="text-gray-700 hover:text-gray-500 font-medium">Home</a>
+            <a href="/AboutSection" className="text-gray-700 hover:text-gray-500 font-medium">About us</a>
+            <a href="/ServicesSection" className="text-gray-700 hover:text-gray-500 font-medium">Services</a>
             <a href="#school" className="text-gray-700 hover:text-gray-500 font-medium">ECT TVET School</a>
             <a href="#internship" className="text-gray-700 hover:text-gray-500 font-medium">Internship</a>
-            <a href="#contact" className="text-gray-700 hover:text-gray-500 font-medium">Contacts</a>
+            <a href="./ContactUs" className="text-gray-700 hover:text-gray-500 font-medium">Contacts</a>
           </nav>
           
           {/* Desktop ShoppingCart and Search Bar */}
