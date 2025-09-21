@@ -56,48 +56,6 @@ const AboutSection = () => {
     }
   ];
 
-  const team = [
-    {
-      name: 'Eric Twanda',
-      role: 'Founder & CEO',
-      image: '👨‍💼',
-      description: 'Visionary leader with 15+ years in technology industry'
-    },
-    {
-      name: 'Technical Team',
-      role: 'Expert Engineers',
-      image: '👨‍💻',
-      description: 'Skilled professionals dedicated to excellence'
-    },
-    {
-      name: 'Support Team',
-      role: 'Customer Success',
-      image: '👩‍💼',
-      description: 'Committed to providing exceptional customer service'
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: 'Sarah Johnson',
-      role: 'Business Owner',
-      content: 'ERIC Tech Twanda transformed our office setup completely. Their expertise and quality products are unmatched!',
-      rating: 5
-    },
-    {
-      name: 'Michael Chen',
-      role: 'IT Manager',
-      content: 'Outstanding service and support. They delivered exactly what we needed, on time and within budget.',
-      rating: 5
-    },
-    {
-      name: 'Amanda Rodriguez',
-      role: 'Startup Founder',
-      content: 'From consultation to implementation, the team was professional, knowledgeable, and incredibly helpful.',
-      rating: 5
-    }
-  ];
-
   return (
     <section className="relative min-h-screen bg-white overflow-hidden">
       {/* Header Section with Gradient Background */}
@@ -141,7 +99,7 @@ const AboutSection = () => {
                 <div className="space-y-6">
                     <h3 className="text-3xl font-bold text-gray-800">Our Story in 2 Minutes</h3>
                     <p className="text-lg text-gray-600 leading-relaxed">
-                    Discover how ERIC Tech Twanda grew from a small startup to Rwanda's leading technology provider.
+                    Discover how ERIC Tech Twanda grew from a small startup to Rwanda leading technology provider.
                     </p>
                     
                     <div className="space-y-4">
@@ -234,7 +192,7 @@ const AboutSection = () => {
                   <div>
                     <h2 className="text-4xl font-bold text-gray-800 mb-6">Our Journey</h2>
                     <p className="text-lg text-gray-600 leading-relaxed mb-6 text-justify">
-                      Founded with a vision to revolutionize Rwanda's technology landscape, ERIC Tech Twanda has grown from a small startup to a trusted technology partner serving thousands of customers across the country.
+                      Founded with a vision to revolutionize Rwanda technology landscape, ERIC Tech Twanda has grown from a small startup to a trusted technology partner serving thousands of customers across the country.
                     </p>
                     <p className="text-lg text-gray-600 leading-relaxed mb-6 text-justify">
                       Our commitment to excellence, innovation, and customer satisfaction has made us a leader in providing premium electronics, technical education, and comprehensive technology solutions.
@@ -282,7 +240,7 @@ const AboutSection = () => {
                     <h3 className="text-3xl font-bold text-gray-800 mb-4">Our Vision</h3>
                   </div>
                   <p className="text-lg text-gray-600 leading-relaxed text-center">
-                    To be Rwanda's premier technology partner, recognized for innovation, excellence, and our commitment to building a digitally empowered society through quality products and education.
+                    To be Rwanda premier technology partner, recognized for innovation, excellence, and our commitment to building a digitally empowered society through quality products and education.
                   </p>
                 </div>
               </div>
