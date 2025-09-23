@@ -240,12 +240,17 @@ const AboutSection = () => {
                       Our Journey
                     </h2>
                     <p className="text-lg text-gray-600 leading-relaxed mb-6 text-justify">
-                      Founded in Kigali, EricTech Ltd has established itself as a leading provider of electronic repair services and IT solutions in Rwanda. Our commitment to quality service and technical excellence has earned us a reputation for reliability and expertise.
-
-  </p>
+                      Founded in Kigali, EricTech Ltd has established itself as
+                      a leading provider of electronic repair services and IT
+                      solutions in Rwanda. Our commitment to quality service and
+                      technical excellence has earned us a reputation for
+                      reliability and expertise.
+                    </p>
                     <p className="text-lg text-gray-600 leading-relaxed mb-6 text-justify">
-                      Through our Electronic and Computer Technology (ECT), we're contributing to Rwanda's growing technology sector by training skilled technicians in electronics and computer technology.
-                  
+                      Through our Electronic and Computer Technology (ECT), we
+                      are contributing to Rwandas growing technology sector by
+                      training skilled technicians in electronics and computer
+                      technology.
                     </p>
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
