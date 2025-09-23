@@ -221,7 +221,7 @@ const TrainingPrograms = () => {
     {/* Left Side Image */}
     <div className="col-span-1">
       <img
-        src="/images/pic18_nu9o1o.jpg" // Replace with your actual image path
+        src="/images/pic18_nu9o1o.jpg" 
         alt="ECT Training"
         className="w-full h-full object-cover rounded-xl shadow-lg"
       />
