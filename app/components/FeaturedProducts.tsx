@@ -5,36 +5,61 @@ const FeaturedProducts = () => {
   const products = [
     {
       id: 1,
-      name: "iPhone 15 Pro Max",
-      description: "Latest flagship with titanium design", // No need to escape here, since it's a text string
-      price: "$1199",
-      image: "/images/1 (3).jpg",
+      name: "Business Laptops",
+      description: "Powerful computing solutions for work and creativity with premium performance", 
+      image: "/images/pro (2).jpg",
       alt: "iPhone 15 Pro Max"
     },
     {
       id: 2,
-      name: "MacBook Pro M3",
-      description: "Powerful performance for professionals",
-      price: "$1999",
-      image: "/images/1 (2).webp",
-      alt: "MacBook Pro M3"
+      name: "Desktop Systems",
+      description: "Reliable workstations for office and professional computing needs",
+      image: "/images/500.jpg",
+      alt: "Business Laptops"
     },
     {
       id: 3,
-      name: "Sony WH-1000XM4",
-      description: "Industry-leading noise cancellation",
-      price: "$349",
-      image: "/images/1 (2).jpg",
-      alt: "Sony WH-1000XM4"
+      name: "Printing Solutions",
+      description: "Efficient printing technology for home and business environments",
+      image:  "/images/pro (1).jpg",
+      alt: "Printing Solutions"
     },
     {
       id: 4,
-      name: "Samsung Galaxy S24 Ultra",
-      description: "AI-powered photography and S Pen", // If you have apostrophes here, replace with &apos; or &#39;
-      price: "$1299",
-      image: "/images/1 (1).jpg",
-      alt: "Samsung Galaxy S24 Ultra"
+      name: "Camera Systems",
+      description: "High-resolution imaging with advanced features for photography enthusiasts and professionals",
+      image: "/images/pro (3).jpg",
+      alt: "Camera Systems"
+    },
+     {
+      id: 5,
+      name: "Networking Equipments",
+      description: "Advanced connectivity solutions for seamless internet access",
+      image: "/images/600.jpg",
+      alt: "Networking Equipments"
+    },
+     {
+      id: 6,
+      name: "Projection Systems",
+      description: "High-quality visual presentation equipment for business and education",
+      image: "/images/800.jpg",
+      alt: "Projection Systems"
+    },
+     {
+      id:7,
+      name: "Audio Equipment",
+      description: "Premium sound systems for immersive audio experiences",
+      image: "/images/200.jpg",
+      alt: "Audio Equipment"
+    },
+     {
+      id: 8,
+      name: "Television Systems",
+      description: "State-of-the-art display technology for home entertainment",
+      image: "/images/700.jpg",
+      alt: "Television Systems"
     }
+
   ];
 
   return (
@@ -43,6 +68,9 @@ const FeaturedProducts = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-2">Featured Products</h2>
+         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          High-quality electronics and IT equipment available at EricTech Ltd in Kigali, Rwanda
+          </p>
         </div>
         
         {/* Products Grid */}
@@ -71,8 +99,8 @@ const FeaturedProducts = () => {
                 
                 {/* Price and Button Row */}
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-blue-600">
-                    {product.price}
+                  <span className="text- text-gray-500 bg-gray-100 rounded-full p-2">
+                    
                   </span>
                   <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium">
                     View Details

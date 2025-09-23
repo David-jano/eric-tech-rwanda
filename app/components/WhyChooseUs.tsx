@@ -75,60 +75,6 @@ const WhyChooseUs = () => {
               </p>
             </div>
           </div>
-
-          {/* Card 4: Expert Setup */}
-          <div className="group relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-gray-100 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-orange-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-            
-            <div className="relative z-10">
-              <div className="bg-gradient-to-br from-orange-100 to-orange-200 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 group-hover:scale-110 transition-all duration-500">
-                <Zap className="w-10 h-10 text-orange-600 group-hover:text-orange-700 transition-colors duration-300" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-orange-900 transition-colors duration-300 text-center">
-                Expert Setup
-              </h3>
-              <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300 text-center">
-                Free setup assistance and technical guidance. Our experts help you get the most out of your new electronics purchases.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 5: Lifetime Support */}
-          <div className="group relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-gray-100 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-red-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-            
-            <div className="relative z-10">
-              <div className="bg-gradient-to-br from-red-100 to-red-200 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 group-hover:scale-110 transition-all duration-500">
-                <Headphones className="w-10 h-10 text-red-600 group-hover:text-red-700 transition-colors duration-300" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-red-900 transition-colors duration-300 text-center">
-                Lifetime Support
-              </h3>
-              <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300 text-center">
-                Ongoing support even after warranty expires. Our customer care team is always ready to help with any questions or issues.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 6: Easy Returns */}
-          <div className="group relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 border border-gray-100 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-indigo-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-            
-            <div className="relative z-10">
-              <div className="bg-gradient-to-br from-indigo-100 to-indigo-200 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 group-hover:scale-110 transition-all duration-500">
-                <RotateCcw className="w-10 h-10 text-indigo-600 group-hover:text-indigo-700 transition-colors duration-300" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-indigo-900 transition-colors duration-300 text-center">
-                Easy Returns
-              </h3>
-              <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300 text-center">
-                Hassle-free 30-day return policy with free return shipping. Not satisfied? We will make it right with full refunds or exchanges.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
 

@@ -26,7 +26,7 @@ const testimonials: Testimonial[] = [
   {
     id: 2,
     text: "The team at ERIC TECH helped me find the perfect smartphone for my needs at a great price. Will definitely return!",
-    name: "Marie UMUTONI",
+    name: "Fiacre NKUNZUMUREMYI",
     date: "February 28, 2023",
     image: "/profiles/owner.jpg",
     rating: 5
@@ -34,7 +34,7 @@ const testimonials: Testimonial[] = [
   {
     id: 3,
     text: "Outstanding customer service! They took the time to explain all the features of my new tablet and even set it up for me.",
-    name: "Robert Chen",
+    name: "Louise NKURANGA",
     date: "March 5, 2023",
     image: "/profiles/seller.webp",
     rating: 4
@@ -50,7 +50,7 @@ const testimonials: Testimonial[] = [
   {
     id: 5,
     text: "Fast shipping and the product was exactly as described. Will definitely shop here again!",
-    name: "David ISHIMWE",
+    name: "KUNDWA Elvis Kelly",
     date: "May 3, 2023",
     image: "/profiles/me.jpg",
     rating: 3

@@ -22,7 +22,7 @@ const HeroSection = () => {
         <div className="flex justify-center space-x-6 mt-8">
           {/* Shop Now Button */}
           <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-500 transition-colors text-lg">
-            Shop Now
+           Our Services
           </button>
 
           {/* WhatsApp Button */}

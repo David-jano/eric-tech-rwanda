@@ -25,10 +25,10 @@ const SocialIcon = ({ platform, color }: { platform: string, color: string }) =>
 const teamMembers = [
   {
     id: 1,
-    name: "Jean Claude Fiacre",
+    name: "NSHIMIYIMANA Eric",
     role: "CEO & Founder",
     description: "15+ years in tech industry. Passionate about bringing cutting-edge technology to everyone. Former Apple and Samsung executive.",
-    imagePath: "/profiles/owner.jpg",
+    imagePath: "/profiles/3.png",
     social: [
       { platform: "linkedin", url: "#", color: "#0077B5" },
       { platform: "twitter", url: "#", color: "#1DA1F2" },
@@ -39,7 +39,7 @@ const teamMembers = [
     name: "David ISHIMWE",
     role: "Head of Technology",
     description: "MIT graduate with expertise in AI and hardware integration. Leads our product evaluation and tech innovation initiatives.",
-    imagePath: "/profiles/me.jpg",
+    imagePath: "/profiles/2.png",
     social: [
       { platform: "linkedin", url: "#", color: "#0077B5" },
       { platform: "github", url: "#", color: "#333" },
@@ -47,10 +47,10 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: "Marie UMUTONI",
+    name: "ISHIMWE Claude",
     role: "Sales Director",
     description: "10+ years in electronics retail. Expert in matching customers with perfect tech solutions. Builds lasting relationships with clients.",
-    imagePath: "/profiles/seller.webp",
+    imagePath: "/profiles/1.png",
     social: [
       { platform: "linkedin", url: "#", color: "#0077B5" },
       { platform: "whatsapp", url: "#", color: "#25D366" },
@@ -58,8 +58,8 @@ const teamMembers = [
   },
   {
     id: 4,
-    name: "SANO Emelyne",
-    role: "Accountant",
+    name: "Fiacre MUREMYI",
+    role: "Technicien",
     description: "Dedicated to customer satisfaction with background in technical support. Ensures every customer has an amazing experience.",
     imagePath: "/profiles/acc.webp",
     social: [

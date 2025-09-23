@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from 'react';
-import { ShoppingCart, Zap, Menu, X } from 'lucide-react';
-import Link from 'next/link';
+import React, { useState } from "react";
+import { ShoppingCart, Zap, Menu, X } from "lucide-react";
+import Link from "next/link";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -17,22 +17,58 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo and Info */}
           <div className="flex items-center space-x-2">
-            <div className="bg-blue-600 text-white p-2 rounded-lg">
-              <Zap className="w-6 h-6" />
+            <div className="p-2 rounded-lg bg-blue-600">
+              <img
+                src="/images/logo.png" // Update this path
+                alt="ERIC Tech Rwanda Logo"
+                className="w-10 h-10 object-contain"
+              />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">ERIC Tech Rwanda</h1>
+              <h1 className="text-xl font-bold text-gray-900">
+                ERIC Tech Rwanda
+              </h1>
             </div>
           </div>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-gray-500 font-medium">Home</Link>
-            <Link href="/AboutSection" className="text-gray-700 hover:text-gray-500 font-medium">About us</Link>
-            <Link href="/ServicesSection" className="text-gray-700 hover:text-gray-500 font-medium">Services</Link>
-            <Link href="/#school" className="text-gray-700 hover:text-gray-500 font-medium">ECT TVET School</Link>
-            <Link href="/#internship" className="text-gray-700 hover:text-gray-500 font-medium">Internship</Link>
-            <Link href="/ContactUs" className="text-gray-700 hover:text-gray-500 font-medium">Contacts</Link>
+            <Link
+              href="/"
+              className="text-gray-700 hover:text-gray-500 font-medium"
+            >
+              Home
+            </Link>
+            <Link
+              href="/AboutSection"
+              className="text-gray-700 hover:text-gray-500 font-medium"
+            >
+              About us
+            </Link>
+            <Link
+              href="/ServicesSection"
+              className="text-gray-700 hover:text-gray-500 font-medium"
+            >
+              Services
+            </Link>
+            <Link
+              href="/#school"
+              className="text-gray-700 hover:text-gray-500 font-medium"
+            >
+              ECT TVET School
+            </Link>
+            <Link
+              href="/InternshipProgram"
+              className="text-gray-700 hover:text-gray-500 font-medium"
+            >
+              Internship
+            </Link>
+            <Link
+              href="/ContactUs"
+              className="text-gray-700 hover:text-gray-500 font-medium"
+            >
+              Contacts
+            </Link>
           </nav>
 
           {/* Desktop ShoppingCart and Search Bar */}
@@ -45,8 +81,18 @@ const Header = () => {
                 className="w-full px-4 py-2 pl-10 pr-4 text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:bg-white"
               />
               <div className="absolute inset-y-0 left-0 flex items-center pl-3">
-                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                <svg
+                  className="w-4 h-4 text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
                 </svg>
               </div>
             </div>
@@ -69,11 +115,13 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`md:hidden transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen 
-            ? 'max-h-96 opacity-100 mt-4' 
-            : 'max-h-0 opacity-0 overflow-hidden'
-        }`}>
+        <div
+          className={`md:hidden transition-all duration-300 ease-in-out ${
+            isMobileMenuOpen
+              ? "max-h-96 opacity-100 mt-4"
+              : "max-h-0 opacity-0 overflow-hidden"
+          }`}
+        >
           <div className="pb-4 border-t border-gray-200 pt-4">
             {/* Mobile Navigation Links */}
             <nav className="flex flex-col space-y-3 mb-4">
@@ -113,7 +161,7 @@ const Header = () => {
                 Internship
               </Link>
               <Link
-                href="/ContactUs"
+                href="/InternshipProgram"
                 className="text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -129,8 +177,18 @@ const Header = () => {
                 className="w-full px-4 py-3 pl-10 pr-4 text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:bg-white"
               />
               <div className="absolute inset-y-0 left-0 flex items-center pl-3">
-                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                <svg
+                  className="w-4 h-4 text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
                 </svg>
               </div>
             </div>
