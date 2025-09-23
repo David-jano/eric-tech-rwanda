@@ -20,7 +20,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <img
-                src="/images/logo.png" // Update this path
+                src="/images/Logo.png" // Update this path
                 alt="ERIC Tech Rwanda Logo"
                 className="w-10 h-10 object-contain"
               />
