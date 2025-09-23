@@ -19,7 +19,7 @@ const Header = () => {
           <div className="flex items-center space-x-2">
             <div className="p-2 rounded-lg bg-blue-600">
               <img
-                src="/images/logo.png" // Update this path
+                src="/images/Logo.png" // Update this path
                 alt="ERIC Tech Rwanda Logo"
                 className="w-10 h-10 object-contain"
               />
@@ -52,7 +52,7 @@ const Header = () => {
               Services
             </Link>
             <Link
-              href="/Ect"
+              href="/ect"
               className="text-gray-700 hover:text-gray-500 font-medium"
             >
               ECT TVET School
