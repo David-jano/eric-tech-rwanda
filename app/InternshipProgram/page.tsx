@@ -36,7 +36,7 @@ import {
 
 const InternshipProgram = () => {
   const [selectedProgram, setSelectedProgram] = useState(0);
-  const [activeTab, setActiveTab] = useState("info"); // 'info' or 'register'
+  const [activeTab, setActiveTab] = useState("info"); 
   const [formData, setFormData] = useState({
     // Personal Information
     fullName: "",
@@ -396,10 +396,10 @@ const InternshipProgram = () => {
                     <div className="text-center mb-4">
                       <div className="text-3xl mb-2 rounded-full">
                         <Image
-                          src={testimonial.image} // This could be a URL or a local path (e.g., '/images/testimonial.jpg')
+                          src={testimonial.image} 
                           alt="Testimonial"
-                          width={50} // Set an appropriate width
-                          height={50} // Set an appropriate height to maintain aspect ratio
+                          width={50} 
+                          height={50} 
                           className="rounded-full "
                         />
                       </div>
@@ -668,7 +668,7 @@ const InternshipProgram = () => {
                             Application Submitted Successfully!
                           </h4>
                           <p className="text-green-700 text-sm">
-                            We'll review your application and contact you within
+                            We will review your application and contact you within
                             2-3 business days.
                           </p>
                         </div>
