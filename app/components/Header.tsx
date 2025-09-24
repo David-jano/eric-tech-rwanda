@@ -154,7 +154,7 @@ const Header = () => {
                 ECT TVET School
               </Link>
               <Link
-                href="/Ect"
+                href="/EctTvetSchool"
                 className="text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

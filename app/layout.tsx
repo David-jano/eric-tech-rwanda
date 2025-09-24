@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "ERIC TECH Rwanda",
   description: "Buying and selling electronic devices",
   icons: {
-    icon: "/images/logo1.png", 
+    icon: "/images/Logo1.png", 
   },
 };
 

@@ -48,7 +48,7 @@ const programs = [
   },
   {
     icon: FaNetworkWired,
-    title: "Networking Fundamentals",
+    title: "CCTV Camera Installation",
     description: "Basic network setup, configuration, and troubleshooting",
     image: "/images/networking.jpg",
     color: "from-orange-500 to-orange-600",
@@ -202,7 +202,7 @@ const TrainingPrograms = () => {
         </div>
 
         {/* Introductory Section */}
-<div className="bg-white rounded-3xl p-8 md:p-12 border border-gray-200 shadow-2xl mb-16">
+<div className="bg-white rounded-3xl p-8 md:p-12 border border-gray-200 shadow-sm mb-16">
   {/* Title */}
   <div className="text-center mb-10">
     <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
@@ -264,7 +264,7 @@ const TrainingPrograms = () => {
 
 
         {/* Major Options Section */}
-        <div className="mb-16">
+        <div className="mb-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-4xl font-bold bg-gradient-to-r from-[#4B73FF] via-[#06B6D4] to-[#8B5CF6] bg-clip-text text-transparent mb-4">
               Choose Your Specialization
@@ -276,7 +276,7 @@ const TrainingPrograms = () => {
           </div>
 
           {/* Major Selection Tabs */}
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-20">
             <div className="bg-white rounded-2xl p-2 border border-gray-200 shadow-lg">
               <div className="flex space-x-2">
                 <button

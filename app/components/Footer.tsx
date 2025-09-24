@@ -20,7 +20,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <img
-                src="/images/Logo.png" // Update this path
+                src="/images/logo.png"
                 alt="ERIC Tech Rwanda Logo"
                 className="w-10 h-10 object-contain"
               />
@@ -79,27 +79,39 @@ const Footer = () => {
             </h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a
+                  href="/AboutSection"
+                  className="hover:text-white transition-colors"
+                >
                   Home
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a
+                  href="/ServicesSection"
+                  className="hover:text-white transition-colors"
+                >
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a
+                  href="/ServicesSection"
+                  className="hover:text-white transition-colors"
+                >
                   Services
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/EctTvetSchool" className="hover:text-white transition-colors">
                   ECT TVET School
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a
+                  href="/InternshipProgram"
+                  className="hover:text-white transition-colors"
+                >
                   Internship
                 </a>
               </li>
@@ -129,7 +141,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Servers
+                  CCTV Cameras
                 </a>
               </li>
               <li>
