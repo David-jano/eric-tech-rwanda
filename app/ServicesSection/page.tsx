@@ -114,7 +114,7 @@ const ServicesSection = () => {
       icon: FaGraduationCap,
       gradient: "from-orange-500 to-orange-600",
       description:
-        "Comprehensive technical education programs designed to build tomorrow tech professionals.",
+        "Comprehensive technical education programs designed to build tomorrow&apos;s tech professionals.",
       features: [
         "Industry-Certified Instructors",
         "Hands-On Training",
