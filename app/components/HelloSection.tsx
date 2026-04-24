@@ -22,9 +22,15 @@ const HeroSection = () => {
         {/* Centering the buttons */}
         <div className="flex flex-col sm:flex-row justify-center sm:space-x-6 space-y-4 sm:space-y-0 mt-8 w-full">
           {/* Our Services Button */}
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-500 transition-colors text-lg w-full sm:w-auto">
+          <a
+            href="http://localhost:3000/ServicesSection"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-500 transition-colors text-lg w-full sm:w-auto"
+          >
             Our Services
-          </button>
+          </a>
+
           {/* WhatsApp Button */}
           <a
             href="https://wa.me/250788833355"

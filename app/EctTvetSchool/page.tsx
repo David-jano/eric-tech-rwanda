@@ -188,88 +188,71 @@ const TrainingPrograms = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <div className="inline-flex items-center space-x-4">
-            <svg
-              className="h-16 w-16 text-[#4B73FF] animate-spin-slow"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M11.996 11.231l-3.52-2.032c-.11-.065-.246-.065-.355 0l-3.52 2.032c-.11.065-.176.185-.176.315v4.065c0 .13.065.25.176.315l3.52 2.032c.11.065.246.065.355 0l3.52-2.032c.11-.065.176-.185.176-.315v-4.065c0-.13-.065-.25-.176-.315zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8-8-3.582 8-8 8z" />
-            </svg>
-            <h1 className="text-4xl md:text-4xl font-bold bg-gradient-to-r from-[#4B73FF] via-[#06B6D4] to-[#8B5CF6] bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-4xl font-bold bg-blue-600 bg-clip-text text-transparent">
               Our Training Programs
             </h1>
           </div>
         </div>
 
         {/* Introductory Section */}
-<div className="bg-white rounded-3xl p-8 md:p-12 border border-gray-200 shadow-sm mb-16">
-  {/* Title */}
-  <div className="text-center mb-10">
-    <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-      ECT offers comprehensive training in electronic and computer
-      technology, providing students with{" "}
-      <span className="bg-gradient-to-r from-[#4B73FF] to-[#06B6D4] bg-clip-text text-transparent font-bold">
-        hands-on experience
-      </span>{" "}
-      and industry-relevant skills.
-    </p>
-  </div>
-
-  {/* Image + Program Grid */}
-  <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
-    
-    {/* Left Side Image */}
-    <div className="col-span-1">
-      <img
-        src="/images/pic18_nu9o1o.jpg" 
-        alt="ECT Training"
-        className="w-full h-full object-cover rounded-xl shadow-lg"
-      />
-    </div>
-
-    {/* Right Side - Program List */}
-    <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-      {programs.map((program, index) => (
-        <div
-          key={index}
-          className="flex items-start space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-colors duration-300"
-        >
-          <div
-            className={`flex-shrink-0 w-12 h-12 bg-gradient-to-r ${program.color} rounded-full flex items-center justify-center mt-1`}
-          >
-            {/* Replace checkmark with program.icon if needed */}
-            <FaCheck className="w-5 h-5 text-white" />
-          </div>
-          <div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">
-              {program.title}
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              {program.description}
+        <div className="bg-white rounded-3xl p-8 md:p-12 border border-gray-200 shadow-sm mb-16">
+          {/* Title */}
+          <div className="text-center mb-10">
+            <p className="text-xl md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+              ECT offers comprehensive training in electronic and computer
+              technology, providing students with{" "}
+              <span className="bg-[#4B73FF] bg-clip-text text-transparent font-bold">
+                hands-on experience
+              </span>{" "}
+              and industry-relevant skills.
             </p>
           </div>
+
+          {/* Image + Program Grid */}
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
+            {/* Left Side Image */}
+            <div className="col-span-1">
+              <img
+                src="/images/pic18_nu9o1o.jpg"
+                alt="ECT Training"
+                className="w-full h-full object-cover rounded-xl shadow-lg"
+              />
+            </div>
+
+            {/* Right Side - Program List */}
+            <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {programs.map((program, index) => (
+                <div
+                  key={index}
+                  className="flex items-start space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-colors duration-300"
+                >
+                  <div
+                    className={`flex-shrink-0 w-12 h-12 bg-gradient-to-r ${program.color} rounded-full flex items-center justify-center mt-1`}
+                  >
+                    {/* Replace checkmark with program.icon if needed */}
+                    <FaCheck className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">
+                      {program.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {program.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-
-  {/* Enquire Button */}
-  <div className="text-center mt-12">
-    <button className="px-8 py-4 bg-gradient-to-r from-[#4B73FF] to-[#06B6D4] text-white font-semibold rounded-xl shadow-lg hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 flex items-center space-x-2 mx-auto">
-      <FaUserGraduate className="w-5 h-5" />
-      <span>Enquire About Training</span>
-    </button>
-  </div>
-</div>
-
 
         {/* Major Options Section */}
         <div className="mb-10">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-4xl font-bold bg-gradient-to-r from-[#4B73FF] via-[#06B6D4] to-[#8B5CF6] bg-clip-text text-transparent mb-4">
+            <h2 className="text-4xl md:text-3xl font-bold bg-[#4B73FF] bg-clip-text text-transparent mb-4">
               Choose Your Specialization
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Select between our two major technology pathways, each with
               specific requirements and career outcomes
             </p>
@@ -283,7 +266,7 @@ const TrainingPrograms = () => {
                   onClick={() => setActiveMajor("all")}
                   className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                     activeMajor === "all"
-                      ? "bg-gradient-to-r from-[#4B73FF] to-[#06B6D4] text-white shadow-lg transform scale-105"
+                      ? "bg-gradient-to-r from-orange-500 to-orange-600 shadow-lg transform scale-105"
                       : "text-gray-600 hover:text-gray-800 hover:bg-blue-50"
                   }`}
                 >
@@ -342,7 +325,7 @@ const TrainingPrograms = () => {
 
               <div className="bg-gray-100 rounded-2xl h-48 flex items-center justify-center mb-6 border border-blue-200 overflow-hidden">
                 <Image
-                  src="/images/pic21_zyzqcu.jpg" 
+                  src="/images/pic21_zyzqcu.jpg"
                   alt="Electronics Lab"
                   width={400}
                   height={200}
@@ -393,7 +376,7 @@ const TrainingPrograms = () => {
                         >
                           {career}
                         </span>
-                      )
+                      ),
                     )}
                   </div>
                 </div>
@@ -488,7 +471,7 @@ const TrainingPrograms = () => {
           {/* Certification Card */}
           <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm">
             <div className="text-center mb-6">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#4B73FF] to-[#06B6D4] rounded-xl mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-500 rounded-xl mb-4">
                 <FaCertificate className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-3xl font-bold text-gray-800 mb-4">
@@ -509,7 +492,7 @@ const TrainingPrograms = () => {
           {/* Course Details Card */}
           <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm">
             <div className="text-center mb-6">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500 rounded-xl mb-4">
                 <FaClock className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-3xl font-bold text-gray-800 mb-4">
@@ -615,23 +598,6 @@ const TrainingPrograms = () => {
               <strong>Note:</strong> Public holidays are respected. Classes will
               not be held on official public holidays.
             </p>
-          </div>
-        </div>
-
-        {/* Call-to-Action Section */}
-        <div className="text-center">
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 md:p-12 border border-blue-200 shadow-xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-              Ready to Start Your Tech Journey?
-            </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Choose your specialization and gain the skills needed for a
-              successful career in technology.
-            </p>
-            <button className="px-8 py-4 bg-gradient-to-r from-[#4B73FF] to-[#06B6D4] text-white font-semibold rounded-xl shadow-lg hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 flex items-center space-x-2 mx-auto">
-              <FaUserGraduate className="w-5 h-5" />
-              <span>Enquire About Training</span>
-            </button>
           </div>
         </div>
       </div>

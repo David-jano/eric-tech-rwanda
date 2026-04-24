@@ -38,18 +38,18 @@ const teamMembers = [
     id: 2,
     name: "David ISHIMWE",
     role: "Head of Technology",
-    description: "MIT graduate with expertise in AI and hardware integration. Leads our product evaluation and tech innovation initiatives.",
+    description: "IPRC graduate with expertise in AI and hardware integration. Leads our product evaluation and tech innovation initiatives.",
     imagePath: "/profiles/2.png",
     social: [
-      { platform: "linkedin", url: "#", color: "#0077B5" },
-      { platform: "github", url: "#", color: "#333" },
+      { platform: "linkedin", url: "https://github.com/David-jano/redbluejd", color: "#0077B5" },
+      { platform: "github", url: "https://github.com/David-jano/redbluejd", color: "#333" },
     ]
   },
   {
     id: 3,
     name: "ISHIMWE Claude",
-    role: "Sales Director",
-    description: "10+ years in electronics retail. Expert in matching customers with perfect tech solutions. Builds lasting relationships with clients.",
+    role: "Technicien",
+    description: "+3 years in electronics retail. Expert in matching customers with perfect tech solutions. Builds lasting relationships with clients.",
     imagePath: "/profiles/1.png",
     social: [
       { platform: "linkedin", url: "#", color: "#0077B5" },
@@ -58,8 +58,8 @@ const teamMembers = [
   },
   {
     id: 4,
-    name: "Fiacre MUREMYI",
-    role: "Technicien",
+    name: "MUTESI Sarah",
+    role: "Accountant",
     description: "Dedicated to customer satisfaction with background in technical support. Ensures every customer has an amazing experience.",
     imagePath: "/profiles/acc.webp",
     social: [
@@ -74,7 +74,7 @@ const TeamSection = () => {
     <>
       <section className="bg-white py-16 px-4">
         <div className="container mx-auto max-w-6xl text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-xl md:text-4xl font-bold text-gray-900 mb-4">
             Meet Our <span className="text-blue-600">Team</span>
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
@@ -130,7 +130,7 @@ const TeamSection = () => {
       </section>
 
       {/* Join Our Team Section */}
-      <section className=" py-16 px-4 w-full  rounded-md mx-auto bg-white">
+      <section className=" py-10 px-4 w-full  rounded-md mx-auto bg-white">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Join Our Team</h2>
           <p className="text-lg text-black mb-10 max-w-2xl mx-auto leading-relaxed">

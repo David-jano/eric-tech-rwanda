@@ -52,7 +52,7 @@ const Header = () => {
               Services
             </Link>
             <Link
-              href="/ect"
+              href="/EctTvetSchool"
               className="text-gray-700 hover:text-gray-500 font-medium"
             >
               ECT TVET School

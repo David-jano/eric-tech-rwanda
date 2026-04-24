@@ -67,16 +67,13 @@ const ContactSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center space-x-3 mb-6">
-            <svg className="h-12 w-12 text-[#4B73FF] animate-spin-slow" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M11.996 11.231l-3.52-2.032c-.11-.065-.246-.065-.355 0l-3.52 2.032c-.11.065-.176.185-.176.315v4.065c0 .13.065.25.176.315l3.52 2.032c.11.065.246.065.355 0l3.52-2.032c.11-.065.176-.185.176-.315v-4.065c0-.13-.065-.25-.176-.315zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z" />
-            </svg>
-            <h1 className="text-5xl md:text-5xl font-bold bg-gradient-to-r from-[#4B73FF] via-[#06B6D4] to-[#8B5CF6] bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-4xl font-bold bg-blue-600 bg-clip-text text-transparent">
               Contact Us
             </h1>
           </div>
-          <p className="text-xl md:text-2xl text-black max-w-3xl mx-auto leading-relaxed">
+          <p className="text-md md:text-md text-black max-w-3xl mx-auto leading-relaxed">
             Ready to transform your tech experience? Let connect and bring your vision to life with 
-            <span className=" bg-gradient-to-r from-[#4B73FF] to-[#06B6D4] bg-clip-text text-transparent font-semibold"> ERIC Tech Twanda</span>
+            <span className=" bg-blue-700 bg-clip-text text-transparent font-semibold"> ERIC Tech Twanda</span>
           </p>
         </div>
 
@@ -84,7 +81,7 @@ const ContactSection = () => {
 
           {/* Contact Form */}
           <div className="w-full lg:w-2/5 flex ">
-            <div className="bg-gradient-to-r from-[#4B73FF]/3 via-[#06B6D4]/4 to-[#8B5CF6]/2 text-black rounded-3xl p-8 border border-blue-300 shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 transform hover:-translate-y-2 w-full">
+            <div className="bg-gradient-to-r from-[#4B73FF]/3 via-[#06B6D4]/4 to-[#8B5CF6]/2 text-black rounded-3xl p-8 border border-blue-300 shadow-lg hover:shadow-blue-500/10 transition-all duration-500 transform hover:-translate-y-2 w-full">
               <h2 className="text-3xl font-bold bg-gradient-to-r from-[#4B73FF] to-[#06B6D4] bg-clip-text text-transparent mb-8 flex items-center">
                 <FaPaperPlane className="mr-3 text-[#4B73FF]" />
                 Send us a Message
@@ -162,7 +159,7 @@ const ContactSection = () => {
               <div className="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-[#4B73FF]/50 transition-all duration-500 transform hover:-translate-y-1 hover:shadow-xl flex-1">
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gradient-to-r from-[#4B73FF] to-[#06B6D4] rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <FaMapMarkerAlt className="w-6 h-6 text-white" />
                     </div>
                   </div>
@@ -197,7 +194,7 @@ const ContactSection = () => {
               <div className="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-[#4B73FF]/50 transition-all duration-500 transform hover:-translate-y-1 hover:shadow-xl flex-1">
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 bg-amber-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <FaEnvelope className="w-6 h-6 text-white" />
                     </div>
                   </div>
@@ -259,26 +256,6 @@ const ContactSection = () => {
                   </div>
                 </a>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Call-to-Action Section */}
-        <div className="text-center mt-16 w-full max-w-4xl mx-auto">
-          <div className="bg-gradient-to-r from-[#4B73FF]/10 via-[#06B6D4]/10 to-[#8B5CF6]/10 rounded-3xl p-8 border border-gray-200">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-              Ready to Get Started?
-            </h2>
-            <p className="text-xl text-gray-900 mb-6 max-w-2xl mx-auto">
-              Join thousands of satisfied customers who trust ERIC Tech Twanda for their technology needs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-[#4B73FF] to-[#06B6D4] text-white font-semibold rounded-xl shadow-lg hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300">
-                Explore Our Services
-              </button>
-              <button className="px-8 py-4 bg-gradient-to-r from-[#4B73FF] to-[#06B6D4] text-white font-semibold rounded-xl shadow-lg hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300">
-                View Our Products
-              </button>
             </div>
           </div>
         </div>

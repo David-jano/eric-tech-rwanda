@@ -31,7 +31,7 @@ const SocialMediaSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+    <section className="py-10 bg-gradient-to-br from-blue-50 to-indigo-50">
       <div className="container mx-auto px-6 max-w-4xl text-center">
         <h2 className="text-4xl font-bold text-black mb-4">Stay Connected</h2>
         <p className="text-xl text-black mb-12 max-w-2xl mx-auto">

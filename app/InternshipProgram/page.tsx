@@ -36,7 +36,7 @@ import {
 
 const InternshipProgram = () => {
   const [selectedProgram, setSelectedProgram] = useState(0);
-  const [activeTab, setActiveTab] = useState("info"); 
+  const [activeTab, setActiveTab] = useState("info");
   const [formData, setFormData] = useState({
     // Personal Information
     fullName: "",
@@ -189,7 +189,7 @@ const InternshipProgram = () => {
   const handleInputChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
     setFormData({
       ...formData,
@@ -247,29 +247,18 @@ const InternshipProgram = () => {
     <>
       <div className="bg-white min-h-screen">
         {/* Hero Section */}
-        <section className="relative overflow-hidden mx-4 md:mx-8 lg:mx-12 xl:mx-16 rounded-3xl mb-16">
-          <div className="absolute inset-0">
-            <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          </div>
-
-          <div className="relative z-10 container mx-auto px-6 py-20">
+        <section className="relative overflow-hidden mx-4 md:mx-8 lg:mx-12 xl:mx-16 rounded-3xl">
+          <div className="relative z-10 container mx-auto px-6 py-16 md:py-20">
             <div className="text-center">
-              <div className="inline-flex items-center space-x-4 mb-8">
-                <div className="relative">
-                  <FaGraduationCap className="h-16 w-16 text-[#4B73FF] animate-bounce" />
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-orange-400 to-red-400 rounded-full flex items-center justify-center">
-                    <FaStar className="w-3 h-3 text-white" />
-                  </div>
-                </div>
-                <h1 className="text-5xl md:text-5xl font-bold bg-gradient-to-r from-[#4B73FF] via-[#06B6D4] to-[#8B5CF6] bg-clip-text text-transparent">
+              <div className="inline-flex items-center space-x-4 mb-4 md:mb-6">
+                <h1 className="text-3xl md:text-4xl font-bold bg-blue-600 bg-clip-text text-transparent">
                   Internship Program
                 </h1>
               </div>
 
-              <p className="text-sm md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8">
+              <p className="text-sm md:text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed mb-6 md:mb-8">
                 Transform your academic knowledge into
-                <span className="bg-gradient-to-r from-[#4B73FF] to-[#06B6D4] bg-clip-text text-transparent font-bold">
+                <span className="bg-blue-600 bg-clip-text text-transparent font-bold">
                   {" "}
                   real-world expertise
                 </span>{" "}
@@ -277,14 +266,14 @@ const InternshipProgram = () => {
               </p>
 
               {/* Tab Navigation */}
-              <div className="flex justify-center mb-8">
+              <div className="flex justify-center">
                 <div className="bg-white/90 backdrop-blur-xl rounded-2xl p-2 border border-blue-200/50 shadow-lg">
                   <div className="flex space-x-2">
                     <button
                       onClick={() => setActiveTab("info")}
                       className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                         activeTab === "info"
-                          ? "bg-gradient-to-r from-[#4B73FF] to-[#06B6D4] text-white shadow-lg"
+                          ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg"
                           : "text-gray-600 hover:text-[#4B73FF]"
                       }`}
                     >
@@ -294,7 +283,7 @@ const InternshipProgram = () => {
                       onClick={() => setActiveTab("register")}
                       className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                         activeTab === "register"
-                          ? "bg-gradient-to-r from-[#4B73FF] to-[#06B6D4] text-white shadow-lg"
+                          ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg"
                           : "text-gray-600 hover:text-[#4B73FF]"
                       }`}
                     >
@@ -311,62 +300,82 @@ const InternshipProgram = () => {
         {activeTab === "info" && (
           <>
             {/* Programs Section */}
-            <section className="container mx-auto px-6 mb-16">
+            <section className="container mx-auto px-4 mb-16">
               <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                  Students We Offer Internships To
+                <div className="inline-flex items-center gap-2 bg-gray-100 rounded-full px-4 py-2 mb-4">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                  </span>
+                  <span className="text-xs font-medium text-gray-600 uppercase tracking-wide">
+                    Programs
+                  </span>
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+                  Students We Offer Internships to
                 </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                <p className="text-gray-500 max-w-2xl mx-auto">
                   Specialized programs designed for RTB, TVET, and REB students
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 {internshipPrograms.map((program, index) => (
                   <div
                     key={index}
-                    className="group bg-white rounded-2xl p-6 border-2 shadow-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
+                    className="relative bg-white rounded-xl border border-gray-200 overflow-hidden transition-all duration-200"
                   >
-                    <div className="text-center mb-4">
-                      <div
-                        className={`w-16 h-16 bg-gradient-to-r ${program.gradient} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg mx-auto mb-3`}
-                      >
-                        <program.icon className="w-8 h-8 text-white" />
-                      </div>
-                      <h3 className="text-lg font-bold text-gray-800 mb-1">
-                        {program.title}
-                      </h3>
-                      <p className="text-[#4B73FF] font-semibold text-sm mb-2">
-                        {program.subtitle}
-                      </p>
-                      <div className="bg-gradient-to-r from-orange-100 to-red-100 rounded-xl px-3 py-1 border border-orange-200 inline-block">
-                        <div className="flex items-center space-x-1">
-                          <FaClock className="w-3 h-3 text-orange-600" />
-                          <span className="font-bold text-orange-700 text-xs">
-                            {program.duration}
-                          </span>
+                    {/* Subtle top accent line */}
+                    <div
+                      className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${program.gradient}`}
+                    ></div>
+
+                    <div className="p-6">
+                      {/* Icon */}
+                      <div className="mb-5">
+                        <div
+                          className={`w-12 h-12 bg-gradient-to-r ${program.gradient} rounded-xl flex items-center justify-center`}
+                        >
+                          <program.icon className="w-6 h-6 text-white" />
                         </div>
                       </div>
-                    </div>
 
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4 text-center">
-                      {program.description}
-                    </p>
+                      {/* Title & Subtitle */}
+                      <div className="mb-4">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                          {program.title}
+                        </h3>
+                        <p className="text-sm text-blue-600 font-medium">
+                          {program.subtitle}
+                        </p>
+                      </div>
 
-                    <div className="space-y-3">
+                      {/* Duration Badge */}
+                      <div className="mb-4">
+                        <div className="inline-flex items-center gap-1.5 text-gray-500">
+                          <FaClock className="w-3.5 h-3.5 text-gray-400" />
+                          <span className="text-sm">{program.duration}</span>
+                        </div>
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                        {program.description}
+                      </p>
+
+                      {/* Divider */}
+                      <div className="border-t border-gray-100 my-4"></div>
+
+                      {/* Skills Section */}
                       <div>
-                        <h4 className="text-sm font-bold text-gray-800 mb-2 flex items-center justify-center">
-                          <FaTools className="w-3 h-3 text-[#4B73FF] mr-1" />
-                          Skills
+                        <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">
+                          Skills You'll Gain
                         </h4>
-                        <div className="space-y-1">
+                        <div className="space-y-2">
                           {program.skills.slice(0, 3).map((skill, idx) => (
-                            <div
-                              key={idx}
-                              className="flex items-center space-x-2"
-                            >
-                              <FaCheck className="w-3 h-3 text-green-500" />
-                              <span className="text-gray-700 text-xs">
+                            <div key={idx} className="flex items-center gap-2">
+                              <FaCheck className="w-3 h-3 text-green-500 flex-shrink-0" />
+                              <span className="text-sm text-gray-600">
                                 {skill}
                               </span>
                             </div>
@@ -374,45 +383,6 @@ const InternshipProgram = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Testimonials Section */}
-            <section className="container mx-auto px-6 mb-16 ">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                  Student Testimonials
-                </h2>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {testimonials.map((testimonial, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-2xl p-6 border-2 border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    <div className="text-center mb-4">
-                      <div className="text-3xl mb-2 rounded-full">
-                        <Image
-                          src={testimonial.image} 
-                          alt="Testimonial"
-                          width={50} 
-                          height={50} 
-                          className="rounded-full "
-                        />
-                      </div>
-                      <h4 className="text-lg font-bold text-gray-800">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-[#4B73FF] font-semibold text-sm">
-                        {testimonial.school}
-                      </p>
-                    </div>
-                    <p className="text-gray-700 text-sm leading-relaxed text-center">
-                      {testimonial.content}
-                    </p>
                   </div>
                 ))}
               </div>
@@ -425,10 +395,10 @@ const InternshipProgram = () => {
         {activeTab === "register" && (
           <section className="container mx-auto px-6 mb-16">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+              <h2 className="text-4xl md:text-4xl font-bold text-gray-800 mb-2">
                 Internship Application
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-md text-gray-600 max-w-3xl mx-auto">
                 Complete the form below to apply for our internship program
               </p>
             </div>
@@ -439,12 +409,12 @@ const InternshipProgram = () => {
                   {/* Personal Information */}
                   <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
                     <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                      <FaUser className="w-6 h-6 text-[#4B73FF] mr-3" />
+                      <FaUser className="w-4 h-4 text-black mr-3" />
                       Personal Information
                     </h3>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                       <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-2">
+                        <label className="block text-sm font-bold text-black mb-2">
                           Full Name *
                         </label>
                         <input
@@ -532,7 +502,7 @@ const InternshipProgram = () => {
                   {/* Educational Information */}
                   <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6 border border-blue-100">
                     <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                      <FaSchool className="w-6 h-6 text-[#4B73FF] mr-3" />
+                      <FaSchool className="w-4 h-4 text-black mr-3" />
                       Educational Information
                     </h3>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -583,7 +553,7 @@ const InternshipProgram = () => {
                   {/* Internship Preferences */}
                   <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 border border-blue-100">
                     <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                      <FaCalendarAlt className="w-6 h-6 text-[#4B73FF] mr-3" />
+                      <FaCalendarAlt className="w-4 h-4 text-black mr-3" />
                       Internship Preferences
                     </h3>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -638,10 +608,10 @@ const InternshipProgram = () => {
                     <button
                       type="submit"
                       disabled={formStatus === "loading"}
-                      className={`flex-1 py-4 px-8 rounded-xl font-bold text-white transition-all duration-300 transform hover:scale-105 ${
+                      className={`flex-1 py-4 px-4 rounded-xl font-bold text-white transition-all duration-300 transform hover:scale-105 ${
                         formStatus === "loading"
                           ? "bg-gray-400 cursor-not-allowed"
-                          : "bg-gradient-to-r from-[#4B73FF] to-[#06B6D4] hover:shadow-2xl hover:shadow-blue-500/30"
+                          : "bg-gradient-to-r from-orange-500 to-orange-600 hover:shadow-2xl hover:shadow-blue-500/30"
                       }`}
                     >
                       {formStatus === "loading" ? (
@@ -650,7 +620,7 @@ const InternshipProgram = () => {
                           <span>Submitting Application...</span>
                         </div>
                       ) : (
-                        <div className="flex items-center justify-center space-x-2 w-full sm:w-auto">
+                        <div className="flex items-center justify-center space-x-2 w-full sm:w-auto ">
                           <span>Submit Your Application Now</span>
                           <FaArrowRight className="w-4 h-4" />
                         </div>
@@ -668,8 +638,8 @@ const InternshipProgram = () => {
                             Application Submitted Successfully!
                           </h4>
                           <p className="text-green-700 text-sm">
-                            We will review your application and contact you within
-                            2-3 business days.
+                            We will review your application and contact you
+                            within 2-3 business days.
                           </p>
                         </div>
                       </div>

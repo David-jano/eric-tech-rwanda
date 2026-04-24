@@ -45,7 +45,7 @@ const CommentSection = () => {
   };
 
   return (
-    <section className="py-16 ">
+    <section className="py-8">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Share Your Experience</h2>
@@ -54,7 +54,7 @@ const CommentSection = () => {
           </p>
         </div>
 
-        <div className="bg-white rounded-sm shadow-sm p-8 mb-12">
+        <div className="bg-white rounded-sm shadow-sm p-8 mb-4">
           <h3 className="text-2xl font-semibold text-gray-900 mb-6">Leave a Comment</h3>
           
           <form onSubmit={handleSubmit} className="space-y-6">
