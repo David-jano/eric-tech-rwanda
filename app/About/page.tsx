@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import AboutHero from "../components/about_hero";
 import {
   FaLaptop,
   FaServer,
@@ -62,114 +63,8 @@ const AboutSection = () => {
 
   return (
     <section className="relative min-h-screen bg-white overflow-hidden">
-      {/* Header Section with Gradient Background */}
-      <div className="bg-white py-10">
-        <div className="container mx-auto px-6">
-          {/* Hero Section */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center space-x-4 mb-8">
-              <h1 className="text-4xl md:text-5xl font-bold bg-[#4B73FF] bg-clip-text text-transparent">
-                About Us
-              </h1>
-            </div>
-            <p className="text-xl md:text-xl  text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8">
-              Pioneering the future of technology solutions in Rwanda with
-              <span className="bg-[#4B73FF] bg-clip-text text-transparent font-bold">
-                {" "}
-                ERIC Tech Twanda
-              </span>
-            </p>
-
-            {/* Hero Video/Image Placeholder */}
-            <div className="relative max-w-6xl mx-auto">
-              <div className="bg-white rounded-3xl p-8 border border-blue-200 transform hover:shadow-md group-hover:scale-110 transition-all duration-300 ease-in-out">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  {/* Left side - Video */}
-                  <div className="aspect-video bg-gray-100 rounded-2xl flex items-center justify-center border border-blue-200">
-                    {!playingVideo ? (
-                      <button
-                        onClick={() => setPlayingVideo(true)}
-                        className="group flex items-center space-x-4 px-8 py-4 bg-[#4B73FF] rounded-xl shadow-lg hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300"
-                      >
-                        <FaPlay className="text-2xl group-hover:scale-110 transition-transform" />
-                        <span className="text-xl font-semibold">
-                          Watch Our Story
-                        </span>
-                      </button>
-                    ) : (
-                      <video
-                        src="/videos/erictech.mp4"
-                        controls
-                        autoPlay
-                        className="rounded-2xl w-full h-full object-cover"
-                      />
-                    )}
-                  </div>
-
-                  {/* Right side - Content */}
-                  <div className="space-y-6">
-                    <h3 className="text-3xl font-bold text-gray-800">
-                      Our Story in 1.5 Minutes
-                    </h3>
-                    <p className="text-lg text-gray-600 leading-relaxed">
-                      Discover how ERIC Tech Rwanda grew from a small startup to
-                      Rwanda leading technology provider.
-                    </p>
-
-                    <div className="space-y-4">
-                      <div className="flex items-center space-x-4">
-                        <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                          <span className="text-blue-600 font-bold">1</span>
-                        </div>
-                        <p className="text-gray-700">
-                          Founded in 2008 with a vision for technology
-                          excellence
-                        </p>
-                      </div>
-
-                      <div className="flex items-center space-x-4">
-                        <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                          <span className="text-blue-600 font-bold">2</span>
-                        </div>
-                        <p className="text-gray-700">
-                          Served 5000+ satisfied customers across Rwanda
-                        </p>
-                      </div>
-
-                      <div className="flex items-center space-x-4">
-                        <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                          <span className="text-blue-600 font-bold">3</span>
-                        </div>
-                        <p className="text-gray-700">
-                          Technical education through ECT TVET School
-                        </p>
-                      </div>
-                    </div>
-
-                    <button className="px-6 py-3 bg-white border items-center border-blue-300 text-blue-600 font-semibold rounded-xl hover:bg-blue-50 transition-all duration-300 flex space-x-2">
-                      <span>Read Full Story</span>
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      
+<AboutHero/>
       {/* Stats Section with White Background */}
       <div className="bg-white py-2 mb-3">
         <div className="container mx-auto px-6">
@@ -476,7 +371,7 @@ const AboutSection = () => {
         </div>
       </div>
       {/* Call-to-Action Section with Gradient Background */}
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 min-h-[50vh] flex items-center p-10">
+      <div className="bg-gradient-to-br from-gray-50 to-indigo-10 min-h-[50vh] flex items-center p-10">
         <div className="container mx-auto px-6 md:w-2/3 w-full border-sm">
           <div className="text-center">
             <div className="bg-white rounded-3xl p-8 md:p-12 border border-blue-200 shadow-xl">

@@ -686,7 +686,7 @@ const InternshipProgram = () => {
 
       {/* Program Info Tab */}
       {activeTab === "info" && (
-        <section className="container mx-auto px-4 py-16">
+        <section className="container mx-auto px-4 ">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-3">
               Programs We Offer
@@ -808,7 +808,7 @@ const InternshipProgram = () => {
             </div>
 
             {/* Form Card */}
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden mt-30">
+            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden mt-20">
               <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-4">
                 <h3 className="text-xl font-bold text-white">
                   Step {currentStep}: {steps[currentStep - 1].title}

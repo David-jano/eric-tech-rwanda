@@ -3,7 +3,7 @@ import { ArrowRight, Sparkles, Truck, Shield, ShoppingBag } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative h-170 w-full overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white">
+    <section className="relative h-180 sm:h-150 w-full overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white">
       {/* Subtle background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-indigo-500/20 blur-3xl" />
@@ -88,16 +88,12 @@ const HeroSection = () => {
           </div>
 
           {/* Right side: Standalone Device Image - No Container */}
-          <div className="flex-1 relative flex justify-center lg:justify-end z-10">
-            <div className="relative w-full max-w-sm lg:max-w-md">
-              {/* Device Image - Pure PNG, No Container, No Background */}
+          <div className="flex-1 relative flex justify-center lg:justify-end z-20">
+            <div className="relative w-[90%] sm:w-[90%] md:w-full max-w-xl mx-auto">
               <img
-                src="/images/watch.png"
+                src="/images/mac1.png"
                 alt="Electronic Device"
-                className="w-full h-auto object-contain transform transition-all duration-500 hover:scale-105 drop-shadow-2xl"
-                style={{
-                  filter: "drop-shadow(0 30px 40px rgba(0,0,0,0.4))",
-                }}
+                className="w-full h-auto object-contain transition-all duration-500 hover:scale-105 sm:hover:scale-110 drop-shadow-2xl"
               />
             </div>
           </div>

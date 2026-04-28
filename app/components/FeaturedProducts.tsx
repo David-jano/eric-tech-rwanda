@@ -171,7 +171,7 @@ const FeaturedProducts = () => {
                 </p>
                 <div className="flex items-center justify-between">
                   {product.price && (
-                    <span className="text-lg font-bold text-blue-600">
+                    <span className="text-lg  text-blue-600">
                       {product.price.toLocaleString()} Rwf
                     </span>
                   )}

@@ -1,70 +1,50 @@
-@import "tailwindcss";
+/*
+! tailwindcss v3.4.0 | MIT License | https://tailwindcss.com
+*/
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+::before,
+::after {
+  --tw-content: "";
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
 
-/* Apply Inter to EVERYTHING */
-* {
+html,
+:host {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  tab-size: 4; /* 3 */
   font-family:
-    "Inter",
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    sans-serif !important;
+    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-feature-settings: normal; /* 5 */
+  font-variation-settings: normal; /* 6 */
+  -webkit-tap-highlight-color: transparent; /* 7 */
 }
 
-/* Optional: Fine-tune font weights for better hierarchy */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
+/* Rest of Tailwind CSS - you can copy from a working project or use CDN */
 
-h1 {
-  font-weight: 800;
-  letter-spacing: -0.03em;
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-weight: 400;
-  line-height: 1.6;
-}
-
-/* Make buttons and interactive elements slightly bolder */
-button,
-.button,
-input,
-textarea,
-select {
-  font-weight: 500;
-}
-
-/* Smaller text for labels and metadata */
-small,
-.text-small,
-.caption {
-  font-weight: 400;
-}
+/* For now, use CDN in layout.tsx as temporary fix */

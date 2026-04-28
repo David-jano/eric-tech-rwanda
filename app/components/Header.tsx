@@ -65,6 +65,12 @@ const Header = () => {
               Internship
             </Link>
             <Link
+              href="/Tubimenye"
+              className="text-gray-700 hover:text-blue-600 font-medium"
+            >
+              Tubimenye
+            </Link>
+            <Link
               href="/ContactUs"
               className="text-gray-700 hover:text-blue-600 font-medium"
             >
@@ -102,7 +108,7 @@ const Header = () => {
         <div
           className={`md:hidden transition-all duration-300 ease-in-out ${
             isMobileMenuOpen
-              ? "max-h-96 opacity-100 mt-4"
+              ? "max-h-120 opacity-100 mt-4"
               : "max-h-0 opacity-0 overflow-hidden"
           }`}
         >
@@ -144,6 +150,15 @@ const Header = () => {
               >
                 Internship
               </Link>
+
+              <Link
+                href="/Tubimenye"
+                className="text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Tubimenye
+              </Link>
+
               <Link
                 href="/ContactUs"
                 className="text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors"
