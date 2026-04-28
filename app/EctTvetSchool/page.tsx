@@ -511,7 +511,7 @@ const TrainingPrograms = () => {
 
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                  <FaMoneyBillWave className="w-5 h-5 text-green-500" />
+                  <FaMoneyBillWave className="w-5 h-5 text-blue-500" />
                   <span className="text-gray-700">Course Fee:</span>
                 </div>
                 <span className="font-semibold text-gray-800">300,000 RWF</span>
@@ -519,7 +519,7 @@ const TrainingPrograms = () => {
 
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                  <FaBook className="w-5 h-5 text-purple-500" />
+                  <FaBook className="w-5 h-5 text-blue-500" />
                   <span className="text-gray-700">Registration Fee:</span>
                 </div>
                 <span className="font-semibold text-gray-800">10,000 RWF</span>
@@ -527,7 +527,7 @@ const TrainingPrograms = () => {
 
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                  <FaCalendarAlt className="w-5 h-5 text-orange-500" />
+                  <FaCalendarAlt className="w-5 h-5 text-blue-500" />
                   <span className="text-gray-700">Schedule:</span>
                 </div>
                 <span className="font-semibold text-gray-800 text-right">

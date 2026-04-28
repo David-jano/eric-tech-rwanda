@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { ShoppingCart, Zap, Menu, X } from "lucide-react";
 import Link from "next/link";
+import SearchBar from "./SearchBar";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -16,10 +17,10 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo and Info */}
-          <div className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2">
             <div className="p-2 rounded-lg bg-blue-600">
               <img
-                src="/images/Logo.png" // Update this path
+                src="/images/Logo.png"
                 alt="ERIC Tech Rwanda Logo"
                 className="w-10 h-10 object-contain"
               />
@@ -29,43 +30,43 @@ const Header = () => {
                 ERIC Tech Rwanda
               </h1>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex space-x-8">
             <Link
               href="/"
-              className="text-gray-700 hover:text-gray-500 font-medium"
+              className="text-gray-700 hover:text-blue-600 font-medium"
             >
               Home
             </Link>
             <Link
-              href="/AboutSection"
-              className="text-gray-700 hover:text-gray-500 font-medium"
+              href="/About"
+              className="text-gray-700 hover:text-blue-600 font-medium"
             >
               About us
             </Link>
             <Link
-              href="/ServicesSection"
-              className="text-gray-700 hover:text-gray-500 font-medium"
+              href="/Services"
+              className="text-gray-700 hover:text-blue-600 font-medium"
             >
               Services
             </Link>
             <Link
               href="/EctTvetSchool"
-              className="text-gray-700 hover:text-gray-500 font-medium"
+              className="text-gray-700 hover:text-blue-600 font-medium"
             >
               ECT TVET School
             </Link>
             <Link
-              href="/InternshipProgram"
-              className="text-gray-700 hover:text-gray-500 font-medium"
+              href="/Internship"
+              className="text-gray-700 hover:text-blue-600 font-medium"
             >
               Internship
             </Link>
             <Link
               href="/ContactUs"
-              className="text-gray-700 hover:text-gray-500 font-medium"
+              className="text-gray-700 hover:text-blue-600 font-medium"
             >
               Contacts
             </Link>
@@ -73,34 +74,17 @@ const Header = () => {
 
           {/* Desktop ShoppingCart and Search Bar */}
           <div className="hidden md:flex items-center space-x-4">
-            <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-blue-600 cursor-pointer" />
-            <div className="relative w-64">
-              <input
-                type="text"
-                placeholder="Search service..."
-                className="w-full px-4 py-2 pl-10 pr-4 text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:bg-white"
-              />
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3">
-                <svg
-                  className="w-4 h-4 text-gray-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </div>
-            </div>
+            <Link href="/cart">
+              <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-blue-600 cursor-pointer" />
+            </Link>
+            <SearchBar />
           </div>
 
           {/* Mobile Menu Button and Cart */}
           <div className="md:hidden flex items-center space-x-4">
-            <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-blue-600 cursor-pointer" />
+            <Link href="/cart">
+              <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-blue-600 cursor-pointer" />
+            </Link>
             <button
               onClick={toggleMobileMenu}
               className="text-gray-700 hover:text-blue-600 focus:outline-none"
@@ -133,35 +117,35 @@ const Header = () => {
                 Home
               </Link>
               <Link
-                href="/AboutSection"
+                href="/About"
                 className="text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About us
               </Link>
               <Link
-                href="/ServicesSection"
+                href="/Services"
                 className="text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Services
               </Link>
               <Link
-                href="/ServicesSection"
+                href="/EctTvetSchool"
                 className="text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 ECT TVET School
               </Link>
               <Link
-                href="/EctTvetSchool"
+                href="/Internship"
                 className="text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Internship
               </Link>
               <Link
-                href="/InternshipProgram"
+                href="/ContactUs"
                 className="text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -170,27 +154,8 @@ const Header = () => {
             </nav>
 
             {/* Mobile Search Bar */}
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search service..."
-                className="w-full px-4 py-3 pl-10 pr-4 text-gray-700 bg-gray-100 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:bg-white"
-              />
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3">
-                <svg
-                  className="w-4 h-4 text-gray-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </div>
+            <div className="px-4">
+              <SearchBar />
             </div>
           </div>
         </div>

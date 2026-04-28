@@ -1,108 +1,184 @@
-import React from 'react';
-import Image from 'next/image';
+"use client";
+
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { supabase } from "@/lib/supabase";
+
+interface Product {
+  id: number;
+  name: string;
+  description: string;
+  image_url?: string;
+  image?: string;
+  price?: number;
+  original_price?: number;
+  discount?: number;
+  is_featured?: boolean;
+  stock?: number;
+  specifications?: any;
+  features?: string[];
+  created_at?: string;
+}
 
 const FeaturedProducts = () => {
-  const products = [
-    {
-      id: 1,
-      name: "Business Laptops",
-      description: "Powerful computing solutions for work and creativity with premium performance", 
-      image: "/images/pro (2).jpg",
-      alt: "iPhone 15 Pro Max"
-    },
-    {
-      id: 2,
-      name: "Desktop Systems",
-      description: "Reliable workstations for office and professional computing needs",
-      image: "/images/500.jpg",
-      alt: "Business Laptops"
-    },
-    {
-      id: 3,
-      name: "Printing Solutions",
-      description: "Efficient printing technology for home and business environments",
-      image:  "/images/pro (1).jpg",
-      alt: "Printing Solutions"
-    },
-    {
-      id: 4,
-      name: "Camera Systems",
-      description: "High-resolution imaging with advanced features for photography enthusiasts and professionals",
-      image: "/images/pro (3).jpg",
-      alt: "Camera Systems"
-    },
-     {
-      id: 5,
-      name: "Networking Equipments",
-      description: "Advanced connectivity solutions for seamless internet access",
-      image: "/images/600.jpg",
-      alt: "Networking Equipments"
-    },
-     {
-      id: 6,
-      name: "Projection Systems",
-      description: "High-quality visual presentation equipment for business and education",
-      image: "/images/800.jpg",
-      alt: "Projection Systems"
-    },
-     {
-      id:7,
-      name: "Audio Equipment",
-      description: "Premium sound systems for immersive audio experiences",
-      image: "/images/200.jpg",
-      alt: "Audio Equipment"
-    },
-     {
-      id: 8,
-      name: "Television Systems",
-      description: "State-of-the-art display technology for home entertainment",
-      image: "/images/700.jpg",
-      alt: "Television Systems"
-    }
+  const router = useRouter();
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalProducts, setTotalProducts] = useState(0);
+  const productsPerPage = 8;
 
-  ];
+  useEffect(() => {
+    fetchProducts();
+  }, [currentPage]);
+
+  const fetchProducts = async () => {
+    try {
+      setLoading(true);
+
+      // Get total count
+      const { count, error: countError } = await supabase
+        .from("products")
+        .select("*", { count: "exact", head: true })
+        .eq("is_featured", true);
+
+      if (countError) throw countError;
+      setTotalProducts(count || 0);
+
+      // Fetch paginated products
+      const from = (currentPage - 1) * productsPerPage;
+      const to = from + productsPerPage - 1;
+
+      const { data, error } = await supabase
+        .from("products")
+        .select("*")
+        .eq("is_featured", true)
+        .order("created_at", { ascending: false })
+        .range(from, to);
+
+      if (error) throw error;
+      setProducts((data as Product[]) || []);
+    } catch (err: any) {
+      console.error("Error fetching products:", err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleViewDetails = (id: number) => {
+    router.push(`/products/${id}`);
+  };
+
+  const totalPages = Math.ceil(totalProducts / productsPerPage);
+
+  const goToPage = (page: number) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  if (loading) {
+    return (
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-2">
+              Featured Products
+            </h2>
+            <p className="text-xl text-gray-600">Loading products...</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="bg-gray-100 animate-pulse h-64 rounded-lg"
+              ></div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6 text-center">
+          <p className="text-red-600">Error: {error}</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-6">
-        {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-2">Featured Products</h2>
-         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          High-quality electronics and IT equipment available at EricTech Ltd in Kigali, Rwanda
+          <h2 className="text-4xl font-bold text-gray-900 mb-2">
+            Featured Products
+          </h2>
+          <p className="text-xl text-gray-600">
+            High-quality electronics and IT equipment available at EricTech Ltd
+            in Kigali, Rwanda
           </p>
+          {totalProducts > 0 && (
+            <p className="text-sm text-gray-500 mt-2">
+              Showing {products.length} of {totalProducts} products
+            </p>
+          )}
         </div>
-        
-        {/* Products Grid */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.map((product) => (
-            <div key={product.id} className="bg-white rounded-lg hover:shadow-lg border border-gray-200 transition-shadow duration-300 overflow-hidden">
-              {/* Product Image */}
-              <div className="w-full h-48 bg-gray-100 overflow-hidden">
-                <Image 
-                  src={product.image} 
-                  alt={product.alt} 
-                  width={500}  // specify width
-                  height={300}  // specify height
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          {products.map((product, index) => (
+            <div
+              key={product.id}
+              className="bg-white rounded-lg hover:shadow-lg border border-gray-200 transition-shadow overflow-hidden group"
+            >
+              <div className="w-full h-48 bg-gray-100 overflow-hidden relative">
+                <Image
+                  src={
+                    product.image_url ||
+                    product.image ||
+                    "/images/placeholder.jpg"
+                  }
+                  alt={product.name}
+                  width={500}
+                  height={300}
+                  priority={index < 4}
+                  loading={index < 4 ? "eager" : "lazy"}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  className="w-full h-full object-cover cursor-pointer transition-transform duration-300 group-hover:scale-105"
+                  onClick={() => handleViewDetails(product.id)}
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "/images/placeholder.jpg";
+                  }}
                 />
               </div>
-              
-              {/* Product Details */}
               <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3
+                  className="text-lg font-semibold text-gray-900 mb-2 cursor-pointer hover:text-blue-600 transition-colors line-clamp-1"
+                  onClick={() => handleViewDetails(product.id)}
+                >
                   {product.name}
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
                   {product.description}
                 </p>
-                
-                {/* Price and Button Row */}
                 <div className="flex items-center justify-between">
-                  <span className="text- text-gray-500 bg-gray-100 rounded-full p-2">
-                    
-                  </span>
-                  <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium">
+                  {product.price && (
+                    <span className="text-lg font-bold text-blue-600">
+                      {product.price.toLocaleString()} Rwf
+                    </span>
+                  )}
+                  <button
+                    onClick={() => handleViewDetails(product.id)}
+                    className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+                  >
                     View Details
                   </button>
                 </div>
@@ -110,6 +186,57 @@ const FeaturedProducts = () => {
             </div>
           ))}
         </div>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-2 mt-12">
+            <button
+              onClick={() => goToPage(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            >
+              Previous
+            </button>
+
+            <div className="flex gap-2">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (page) => (
+                  <button
+                    key={page}
+                    onClick={() => goToPage(page)}
+                    className={`w-10 h-10 rounded-lg transition-colors ${
+                      currentPage === page
+                        ? "bg-blue-600 text-white"
+                        : "border border-gray-300 text-gray-700 hover:bg-gray-50"
+                    }`}
+                  >
+                    {page}
+                  </button>
+                ),
+              )}
+            </div>
+
+            <button
+              onClick={() => goToPage(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            >
+              Next
+            </button>
+          </div>
+        )}
+
+        {/* View All Button */}
+        {totalProducts > productsPerPage && (
+          <div className="text-center mt-8">
+            <button
+              onClick={() => router.push("/products")}
+              className="text-blue-600 hover:text-blue-800 font-medium"
+            >
+              View All Products →
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

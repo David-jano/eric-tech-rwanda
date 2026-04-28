@@ -17,7 +17,7 @@ const HeroSection = () => {
         />
       </div>
 
-      <div className="relative container mx-auto px-6 md:px-8 lg:px-12 py-20 md:py-28 lg:py-36">
+      <div className="relative container mx-auto px-6 md:px-8 lg:px-12 py-20 md:py-28 lg:py-18">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Left side: Text Content */}
           <div className="flex-1 text-center lg:text-left z-10">
@@ -74,15 +74,15 @@ const HeroSection = () => {
             <div className="flex flex-wrap items-center gap-6 justify-center lg:justify-start mt-10 pt-4 border-t border-white/10">
               <div className="flex items-center gap-2 text-slate-300 text-sm">
                 <Truck className="w-4 h-4 text-indigo-400" />
-                <span>Free Shipping</span>
+                <span>Shop with us</span>
               </div>
               <div className="flex items-center gap-2 text-slate-300 text-sm">
                 <Shield className="w-4 h-4 text-indigo-400" />
-                <span>30-Day Warranty</span>
+                <span>Learn in ECT</span>
               </div>
               <div className="flex items-center gap-2 text-slate-300 text-sm">
                 <ShoppingBag className="w-4 h-4 text-indigo-400" />
-                <span>Secure Checkout</span>
+                <span>Apply Internship</span>
               </div>
             </div>
           </div>
