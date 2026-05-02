@@ -1,5 +1,5 @@
 import React from 'react';
-import { Truck, Book, Laptop } from 'lucide-react';
+import { ShoppingBagIcon, Book, Laptop } from 'lucide-react';
 
 const FeaturesBar = () => {
   return (
@@ -19,7 +19,7 @@ const FeaturesBar = () => {
               {/* Icon Container */}
               <div className="relative">
                 <div className="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-2xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-500">
-                  <Truck className="w-10 h-10 text-white group-hover:scale-110 transition-transform duration-300" />
+                  <ShoppingBagIcon className="w-10 h-10 text-white group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 {/* Animated ring */}
                 <div className="absolute inset-0 border-2 border-blue-300 rounded-full opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-500"></div>

@@ -184,7 +184,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-black mb-2">Call Us</h3>
-                    <p className="text-gray-700 text-lg">+ (250) 7888-33355</p>
+                    <p className="text-gray-700 text-lg">+ (250)782 510 099</p>
                     <p className="text-sm text-gray-600 mt-1">Mon - Fri, 8AM - 6PM</p>
                   </div>
                 </div>
@@ -211,7 +211,7 @@ const ContactSection = () => {
             <div className="bg-white rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-black mb-6 text-center">Connect With Us</h3>
               <div className="flex justify-center space-x-4">
-                <a href="#" className="group relative">
+                <a href="https://www.facebook.com/p/Eric-Tech-Campany-Ltd-100054542885722/" className="group relative">
                   <div className="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-all duration-300 transform hover:scale-110 hover:rotate-12 shadow-lg hover:shadow-blue-500/25">
                     <FaFacebookF className="w-6 h-6 text-white" />
                   </div>
@@ -220,7 +220,7 @@ const ContactSection = () => {
                   </div>
                 </a>
 
-                <a href="#" className="group relative">
+                <a href="https://x.com/erictecrwanda" className="group relative">
                   <div className="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center hover:bg-gray-800 transition-all duration-300 transform hover:scale-110 hover:rotate-12 shadow-lg hover:shadow-blue-400/25">
                     <FaTwitter className="w-6 h-6 text-white" />
                   </div>
@@ -229,7 +229,7 @@ const ContactSection = () => {
                   </div>
                 </a>
 
-                <a href="#" className="group relative">
+                <a href="https://wa.me/250782510099" className="group relative">
                   <div className="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-all duration-300 transform hover:scale-110 hover:rotate-12 shadow-lg hover:shadow-green-500/25">
                     <FaWhatsapp className="w-6 h-6 text-white" />
                   </div>
@@ -238,7 +238,7 @@ const ContactSection = () => {
                   </div>
                 </a>
 
-                <a href="#" className="group relative">
+                <a href="https://www.instagram.com/p/CbX6B9VA4vK/" className="group relative">
                   <div className="w-14 h-14 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-full flex items-center justify-center hover:from-pink-600 hover:via-purple-600 hover:to-indigo-600 transition-all duration-300 transform hover:scale-110 hover:rotate-12 shadow-lg hover:shadow-pink-500/25">
                     <FaInstagram className="w-6 h-6 text-white" />
                   </div>
@@ -247,7 +247,7 @@ const ContactSection = () => {
                   </div>
                 </a>
 
-                <a href="#" className="group relative">
+                <a href="https://www.tiktok.com/@eric.tech.rwanda?is_from_webapp=1&sender_device=pc" className="group relative">
                   <div className="w-14 h-14 bg-black rounded-full flex items-center justify-center hover:bg-gray-800 transition-all duration-300 transform hover:scale-110 hover:rotate-12 shadow-lg hover:shadow-gray-500/25">
                     <SiTiktok className="w-6 h-6 text-white" />
                   </div>

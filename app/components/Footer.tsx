@@ -22,10 +22,10 @@ const Footer = () => {
               <img
                 src="/images/logo.png"
                 alt="ERIC Tech Rwanda Logo"
-                className="w-10 h-10 object-contain"
+                className="w-14 h-14 object-contain"
               />
               <h3 className="text-2xl font-bold text-[#4B73FF]">
-                ERIC Tech Twanda
+                ERIC Tech Rwanda
               </h3>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
@@ -79,37 +79,34 @@ const Footer = () => {
             </h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a
-                  href="/AboutSection"
-                  className="hover:text-white transition-colors"
-                >
+                <a href="/" className="hover:text-white transition-colors">
                   Home
                 </a>
               </li>
               <li>
-                <a
-                  href="/ServicesSection"
-                  className="hover:text-white transition-colors"
-                >
+                <a href="/About" className="hover:text-white transition-colors">
                   About Us
                 </a>
               </li>
               <li>
                 <a
-                  href="/ServicesSection"
+                  href="/Services"
                   className="hover:text-white transition-colors"
                 >
                   Services
                 </a>
               </li>
               <li>
-                <a href="/EctTvetSchool" className="hover:text-white transition-colors">
+                <a
+                  href="/EctTvetSchool"
+                  className="hover:text-white transition-colors"
+                >
                   ECT TVET School
                 </a>
               </li>
               <li>
                 <a
-                  href="/InternshipProgram"
+                  href="/Internship"
                   className="hover:text-white transition-colors"
                 >
                   Internship
@@ -164,7 +161,7 @@ const Footer = () => {
               </p>
               <p className="flex items-center space-x-2">
                 <FaPhoneAlt className="w-4 h-4 text-gray-400" />
-                <span>+ (250) 7888-33355</span>
+                <span>+ (250) 782 510 099</span>
               </p>
               <p className="flex items-center space-x-2">
                 <FaEnvelope className="w-4 h-4 text-gray-400" />

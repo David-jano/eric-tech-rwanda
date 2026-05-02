@@ -1,13 +1,13 @@
 'use client';
 import React from 'react';
-import { FaFacebook, FaTwitter, FaLinkedin, FaShare } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaLinkedin, FaShare, FaInstagram} from 'react-icons/fa';
 
 const SocialMediaSection = () => {
   const socialPlatforms = [
     {
       name: "Facebook",
       icon: <FaFacebook className="w-6 h-6" />,
-      url: "#",
+      url: "https://www.facebook.com/p/Eric-Tech-Campany-Ltd-100054542885722/",
       color: "bg-blue-600",
       hoverColor: "hover:bg-blue-700",
       shareText: "Share on Facebook"
@@ -15,15 +15,15 @@ const SocialMediaSection = () => {
     {
       name: "X",
       icon: <FaTwitter className="w-6 h-6" />,
-      url: "#",
+      url: "https://x.com/erictecrwanda",
       color: "bg-black",
       hoverColor: "hover:bg-gray-800",
       shareText: "Share on X"
     },
     {
-      name: "LinkedIn",
-      icon: <FaLinkedin className="w-6 h-6" />,
-      url: "#",
+      name: "Instagram",
+      icon: <FaInstagram className="w-6 h-6" />,
+      url: "https://www.instagram.com/p/CbX6B9VA4vK/",
       color: "bg-blue-500",
       hoverColor: "hover:bg-blue-600",
       shareText: "Share on LinkedIn"

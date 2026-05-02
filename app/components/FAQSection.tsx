@@ -107,7 +107,7 @@ const FAQSection = () => {
             Still have questions? We are here to help!
           </p>
           <a
-            href="/contact"
+            href="/ContactUs"
             className="inline-block bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl"
           >
             Contact Support

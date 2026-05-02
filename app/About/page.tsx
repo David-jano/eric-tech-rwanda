@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import AboutHero from "../components/about_hero";
+import Link from "next/link";
 import {
   FaLaptop,
   FaServer,
@@ -63,8 +64,7 @@ const AboutSection = () => {
 
   return (
     <section className="relative min-h-screen bg-white overflow-hidden">
-      
-<AboutHero/>
+      <AboutHero />
       {/* Stats Section with White Background */}
       <div className="bg-white py-2 mb-3">
         <div className="container mx-auto px-6">
@@ -220,7 +220,7 @@ const AboutSection = () => {
             {activeTab === "values" && (
               <div className="relative max-w-4xl mx-auto">
                 {/* Vertical timeline line */}
-                <div className="absolute left-8 transform -translate-x-1/2 w-1  h-full rounded-full hidden md:block"></div>
+                <div className="absolute left-8 transform -translate-x-1/2 w-4  h-full rounded-full hidden md:block"></div>
 
                 <div className="space-y-8">
                   {[
@@ -264,15 +264,14 @@ const AboutSection = () => {
                       step: "05",
                       color: "from-green-500 to-green-500",
                     },
-                   
                   ].map((value, index) => (
                     <div key={index} className="relative flex gap-6">
                       {/* Timeline node */}
                       <div className="hidden md:flex flex-col items-center">
                         <div
-                          className={`relative w-16 h-25 bg-gradient-to-r ${value.color} rounded-full flex items-center justify-center shadow-lg z-10`}
+                          className={`relative w-16 h-2/4 bg-gradient-to-r ${value.color} rounded-full flex items-center justify-center shadow-lg z-10`}
                         >
-                          <value.icon className="w-8 h-8 text-white"/>
+                          <value.icon className="w-10 text-white" />
                         </div>
                         {index < 5 && (
                           <div className="w-1 h-full bg-gradient-to-b from-gray-300 to-gray-100 rounded-full my-2"></div>
@@ -387,10 +386,12 @@ const AboutSection = () => {
                   <FaRocket className="w-5 h-5" />
                   <span>Get Started Today</span>
                 </button>
-                <button className="px-8 py-4 bg-white text-gray-800 font-semibold rounded-xl border border-blue-200 hover:bg-gray-50 transition-all duration-300 flex items-center space-x-2">
-                  <FaUsers className="w-5 h-5" />
-                  <span>Contact Our Team</span>
-                </button>
+                <Link href="/ContactUs">
+                  <button className="px-8 py-4 bg-white text-gray-800 font-semibold rounded-xl border border-blue-200 hover:bg-gray-50 transition-all duration-300 flex items-center space-x-2">
+                    <FaUsers className="w-5 h-5" />
+                    <span>Contact Our Team</span>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,9 +1,9 @@
 import React from "react";
-import { ArrowRight, Sparkles, Truck, Shield, ShoppingBag } from "lucide-react";
+import { ArrowRight, BookAudioIcon, ShoppingCart,GraduationCap, ShoppingBag } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative h-180 sm:h-150 w-full overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white">
+    <section className="relative h-auto sm:h-180 w-full overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white">
       {/* Subtle background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-indigo-500/20 blur-3xl" />
@@ -17,8 +17,8 @@ const HeroSection = () => {
         />
       </div>
 
-      <div className="relative container mx-auto px-6 md:px-8 lg:px-12 py-20 md:py-28 lg:py-18">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <div className="relative container mx-auto px-6 md:px-8 lg:px-12 py-12 md:py-20 lg:py-18">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           {/* Left side: Text Content */}
           <div className="flex-1 text-center lg:text-left z-10">
             {/* Badge */}
@@ -28,18 +28,33 @@ const HeroSection = () => {
               </span>
             </div>
 
-            {/* Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-bold leading-tight tracking-tight mb-6">
               Buy & Sell{" "}
               <span className="bg-gradient-to-r from-indigo-300 via-purple-300 to-cyan-300 bg-clip-text text-transparent">
                 New & Used
               </span>
-              <br />
-              Electronic Devices
+              <br className="hidden lg:block" />
+              {/* Image between text on mobile */}
+              <div className="block lg:hidden mb-2">
+                <span className="">Electronic Devices</span>
+              </div>
+              <span className="hidden lg:inline">Electronic Devices</span>
             </h1>
+            {/* Headline - Mobile version with image between text */}
+            <div className="block lg:hidden mb-6">
+              <div className="flex justify-center">
+                <div className="relative w-67 mx-auto">
+                  <img
+                    src="/images/mac1.png"
+                    alt="Electronic Device"
+                    className="w-full h-auto object-contain drop-shadow-2xl"
+                  />
+                </div>
+              </div>
+            </div>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-lg text-slate-300 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+            <p className="text-sm md:text-lg text-slate-300 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
               Discover premium smartphones, laptops, tablets, and accessories.
               Top-quality products at competitive prices with exceptional
               service.
@@ -48,15 +63,15 @@ const HeroSection = () => {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
-                href="http://localhost:3000/ServicesSection"
-                className="group relative inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-bg-green-700 backdrop-blur-sm border border-white/20 text-white font-semibold hover:bg-white/20 transition-all duration-300 hover:scale-[1.02]"
+                href="/Services"
+                className="group relative inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold hover:bg-white/20 transition-all duration-300 hover:scale-[1.02]"
               >
                 <span>Our services</span>
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </a>
 
               <a
-                href="https://wa.me/250788833355"
+                href="https://wa.me/250782510099"
                 className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-green-500 backdrop-blur-sm border border-white/20 text-white font-semibold hover:bg-white/20 transition-all duration-300 hover:scale-[1.02]"
               >
                 <svg
@@ -73,27 +88,27 @@ const HeroSection = () => {
             {/* Trust indicators */}
             <div className="flex flex-wrap items-center gap-6 justify-center lg:justify-start mt-10 pt-4 border-t border-white/10">
               <div className="flex items-center gap-2 text-slate-300 text-sm">
-                <Truck className="w-4 h-4 text-indigo-400" />
+                <ShoppingCart className="w-4 h-4 text-indigo-400" />
                 <span>Shop with us</span>
               </div>
               <div className="flex items-center gap-2 text-slate-300 text-sm">
-                <Shield className="w-4 h-4 text-indigo-400" />
+                <GraduationCap className="w-4 h-4 text-indigo-400" />
                 <span>Learn in ECT</span>
               </div>
               <div className="flex items-center gap-2 text-slate-300 text-sm">
-                <ShoppingBag className="w-4 h-4 text-indigo-400" />
+                <BookAudioIcon className="w-4 h-4 text-indigo-400" />
                 <span>Apply Internship</span>
               </div>
             </div>
           </div>
 
-          {/* Right side: Standalone Device Image - No Container */}
-          <div className="flex-1 relative flex justify-center lg:justify-end z-20">
-            <div className="relative w-[90%] sm:w-[90%] md:w-full max-w-xl mx-auto">
+          {/* Right side: Standalone Device Image - Hidden on mobile, visible on lg screens */}
+          <div className="hidden lg:flex flex-1 relative justify-center lg:justify-end z-20">
+            <div className="relative w-full max-w-xl mx-auto">
               <img
                 src="/images/mac1.png"
                 alt="Electronic Device"
-                className="w-full h-auto object-contain transition-all duration-500 hover:scale-105 sm:hover:scale-110 drop-shadow-2xl"
+                className="w-full h-auto object-contain transition-all duration-500 hover:scale-105 drop-shadow-2xl"
               />
             </div>
           </div>
