@@ -20,7 +20,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <img
-                src="/images/logo.png"
+                src="/images/Logo.png"
                 alt="ERIC Tech Rwanda Logo"
                 className="w-14 h-14 object-contain"
               />
@@ -36,35 +36,35 @@ const Footer = () => {
             <div className="flex space-x-4">
               {/* Facebook Icon */}
               <a
-                href="#"
+                href="https://www.facebook.com/p/Eric-Tech-Campany-Ltd-100054542885722/"
                 className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors"
               >
                 <FaFacebookF className="w-5 h-5" />
               </a>
               {/* X (formerly Twitter) Icon */}
               <a
-                href="#"
+                href="https://x.com/erictecrwanda"
                 className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white hover:bg-gray-800 transition-colors"
               >
                 <FaTwitter className="w-5 h-5" />
               </a>
               {/* WhatsApp Icon */}
               <a
-                href="#"
+                href="https://wa.me/250782510099"
                 className="flex items-center justify-center w-8 h-8 rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors"
               >
                 <FaWhatsapp className="w-5 h-5" />
               </a>
               {/* Instagram Icon */}
               <a
-                href="#"
+                href="https://www.instagram.com/p/CbX6B9VA4vK/"
                 className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white hover:bg-pink-600 transition-colors"
               >
                 <FaInstagram className="w-5 h-5" />
               </a>
               {/* TikTok Icon */}
               <a
-                href="#"
+                href="https://www.tiktok.com/@eric.tech.rwanda?is_from_webapp=1&sender_device=pc"
                 className="flex items-center justify-center w-8 h-8 rounded-full bg-black text-white hover:bg-gray-800 transition-colors"
               >
                 <SiTiktok className="w-5 h-5" />
