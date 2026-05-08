@@ -80,9 +80,7 @@ const Header = () => {
 
           {/* Desktop ShoppingCart and Search Bar */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="/cart">
               <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-blue-600 cursor-pointer" />
-            </Link>
             <SearchBar />
           </div>
 

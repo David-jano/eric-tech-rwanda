@@ -647,7 +647,7 @@ const InternshipProgram = () => {
       <section className="relative overflow-hidden mx-4 md:mx-8 lg:mx-12 xl:mx-16 rounded-3xl">
         <div className="relative z-10 container mx-auto px-6 py-16 md:py-20">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-blue-500 mb-4">
               Internship Program
             </h1>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">

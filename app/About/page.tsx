@@ -15,6 +15,7 @@ import {
   FaHeart,
   FaEye,
   FaBullseye,
+  FaBookOpen,
   FaStar,
   FaQuoteLeft,
   FaPlay,
@@ -24,13 +25,6 @@ import {
 const AboutSection = () => {
   const [activeTab, setActiveTab] = useState("story");
   const [playingVideo, setPlayingVideo] = useState(false);
-
-  const stats = [
-    { number: "5000+", label: "Sucessfully Repaired Devices", icon: FaUsers },
-    { number: "15+", label: "Years Experience", icon: FaAward },
-    { number: "99%", label: "Customer Satisfaction", icon: FaPeopleArrows },
-    { number: "24/7", label: "Support Available", icon: FaBolt },
-  ];
 
   const services = [
     {
@@ -48,10 +42,10 @@ const AboutSection = () => {
       color: "from-purple-500 to-purple-600",
     },
     {
-      icon: FaTools,
-      title: "Technical Support",
+      icon:   FaBookOpen,
+      title: "Internship Programs",
       description:
-        "Expert repair services and technical support for all your devices",
+        "Expert Trainers for both secondary and University students",
       color: "from-green-500 to-green-600",
     },
     {
@@ -65,30 +59,8 @@ const AboutSection = () => {
   return (
     <section className="relative min-h-screen bg-white overflow-hidden">
       <AboutHero />
-      {/* Stats Section with White Background */}
-      <div className="bg-white py-2 mb-3">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="group bg-white rounded-2xl p-6 border border-gray-200 text-center hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 transform hover:-translate-y-2"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <stat.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-3xl font-bold text-gray-800 mb-2">
-                  {stat.number}
-                </h3>
-                <p className="text-gray-600">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Tab Navigation Section with Light Background */}
-      <div className="bg-gray-50 py-16">
+      <div className="bg-gray-50 py-1">
         <div className="container mx-auto px-6">
           <div className="flex justify-center mb-12">
             <div className="bg-white rounded-2xl p-2 border border-gray-200 shadow-lg">
@@ -121,7 +93,7 @@ const AboutSection = () => {
           {/* Tab Content */}
           <div className="max-w-6xl mx-auto">
             {activeTab === "story" && (
-              <div className="bg-white rounded-3xl p-8 md:p-12 border border-gray-200 shadow-xl">
+              <div className="bg-white rounded-3xl p-8 md:p-12 border border-gray-200 shadow-xl mb-5">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                   <div>
                     <h2 className="text-4xl font-bold text-gray-800 mb-6">
@@ -222,111 +194,83 @@ const AboutSection = () => {
                 {/* Vertical timeline line */}
                 <div className="absolute left-8 transform -translate-x-1/2 w-4  h-full rounded-full hidden md:block"></div>
 
-                <div className="space-y-8">
-                  {[
-                    {
-                      icon: FaShieldAlt,
-                      title: "Quality",
-                      description:
-                        "We never compromise on the quality of our products and services.",
-                      step: "01",
-                      color: "from-blue-500 to-blue-500",
-                    },
-                    {
-                      icon: FaHeart,
-                      title: "Customer First",
-                      description:
-                        "Your satisfaction and success are at the heart of everything we do.",
-                      step: "02",
-                      color: "from-red-500 to-red-500",
-                    },
-                    {
-                      icon: FaBolt,
-                      title: "Innovation",
-                      description:
-                        "We embrace new technologies and creative solutions.",
-                      step: "03",
-                      color: "from-yellow-500 to-yellow-500",
-                    },
-                    {
-                      icon: FaUsers,
-                      title: "Integrity",
-                      description:
-                        "We operate with honesty, transparency, and ethical practices.",
-                      step: "04",
-                      color: "from-purple-500 to-purple-500",
-                    },
-                    {
-                      icon: FaRocket,
-                      title: "Excellence",
-                      description:
-                        "We strive for excellence in every aspect of our business.",
-                      step: "05",
-                      color: "from-green-500 to-green-500",
-                    },
-                  ].map((value, index) => (
-                    <div key={index} className="relative flex gap-6">
-                      {/* Timeline node */}
-                      <div className="hidden md:flex flex-col items-center">
+                <div className="py-20 bg-gray-50">
+                  {/* Heading */}
+                  <div className="text-center mb-16">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                      Our Values
+                    </h2>
+                    <p className="text-gray-500 text-lg">
+                      Principles that guide everything we do
+                    </p>
+                  </div>
+
+                  {/* Timeline */}
+                  <div className="relative max-w-7xl mx-auto px-6">
+                    {/* Horizontal line */}
+                    <div className="hidden md:block absolute top-8 left-0 w-full h-[2px] bg-gray-300"></div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-12 relative z-10">
+                      {[
+                        {
+                          title: "Quality",
+                          description:
+                            "We never compromise on the quality of our products and services.",
+                          step: "1",
+                          color: "from-blue-500 to-blue-500",
+                        },
+                        {
+                          title: "Customer First",
+                          description:
+                            "Your satisfaction and success are at the heart of everything we do.",
+                          step: "2",
+                          color: "from-red-500 to-red-500",
+                        },
+                        {
+                          title: "Innovation",
+                          description:
+                            "We embrace new technologies and creative solutions.",
+                          step: "3",
+                          color: "from-yellow-500 to-yellow-500",
+                        },
+                        {
+                          title: "Integrity",
+                          description:
+                            "We operate with honesty, transparency, and ethical practices.",
+                          step: "4",
+                          color: "from-purple-500 to-purple-500",
+                        },
+                        {
+                          title: "Excellence",
+                          description:
+                            "We strive for excellence in every aspect of our business.",
+                          step: "5",
+                          color: "from-green-500 to-green-500",
+                        },
+                      ].map((value, index) => (
                         <div
-                          className={`relative w-16 h-2/4 bg-gradient-to-r ${value.color} rounded-full flex items-center justify-center shadow-lg z-10`}
+                          key={index}
+                          className="flex flex-col items-center text-center group"
                         >
-                          <value.icon className="w-10 text-white" />
-                        </div>
-                        {index < 5 && (
-                          <div className="w-1 h-full bg-gradient-to-b from-gray-300 to-gray-100 rounded-full my-2"></div>
-                        )}
-                      </div>
-
-                      {/* Content card */}
-                      <div className="flex-1 mb-6">
-                        <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden group">
+                          {/* Step Circle */}
                           <div
-                            className={`absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
-                          ></div>
-
-                          <div className="flex items-center gap-4 mb-4 md:hidden">
-                            <div
-                              className={`inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r ${value.color} rounded-xl`}
-                            >
-                              <value.icon className="w-6 h-6 text-white" />
-                            </div>
-                            <div className="text-sm font-semibold text-transparent bg-clip-text bg-[#4B73FF]">
-                              Step {value.step}
-                            </div>
+                            className={`w-16 h-16 rounded-full bg-gradient-to-r ${value.color} flex items-center justify-center text-white text-xl font-bold shadow-lg transition-all duration-300 group-hover:scale-110`}
+                          >
+                            {value.step}
                           </div>
 
-                          <div className="hidden md:block text-sm font-semibold text-transparent bg-clip-text bg-[#4B73FF] mb-2">
-                            Step {value.step}
-                          </div>
-
-                          <h4 className="text-xl font-bold text-gray-800 mb-3">
+                          {/* Content */}
+                          <h3 className="mt-6 text-xl font-bold text-gray-900 mb-3">
                             {value.title}
-                          </h4>
-                          <p className="text-gray-600 leading-relaxed">
+                          </h3>
+
+                          <p className="text-gray-500 text-sm leading-relaxed max-w-[220px]">
                             {value.description}
                           </p>
-
-                          <div className="mt-4 flex items-center gap-2 text-sm text-gray-400 group-hover:text-gray-600 transition-colors">
-                            <span>Learn more</span>
-                            <svg
-                              className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9 5l7 7-7 7"
-                              />
-                            </svg>
-                          </div>
                         </div>
-                      </div>
+                      ))}
                     </div>
-                  ))}
+                  </div>
                 </div>
               </div>
             )}

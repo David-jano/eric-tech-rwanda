@@ -51,7 +51,7 @@ const AboutHero = () => {
         {/* Hero Content */}
         <div className="text-center mb-16">
           {/* Main Title with Gradient */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+          <h1 className="text-5xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent animate-gradient">
               About Us
             </span>
@@ -78,13 +78,13 @@ const AboutHero = () => {
           <div className="absolute -top-5 -left-5 w-20 h-full bg-blue-500 rounded-full opacity-10 blur-2xl animate-float"></div>
 
           <div
-            className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-500 hover:shadow-3xl"
+            className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-md border border-gray-100 overflow-hidden transition-all duration-500 hover:shadow-3xl"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
             <div className="grid lg:grid-cols-2 gap-0">
               <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 overflow-hidden group">
-                {/* ✅ MOVE GRADIENT HERE */}
+                {/* MOVE GRADIENT HERE */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/50 to-purple-600/50 z-0"></div>
 
                 {!playingVideo ? (
@@ -163,7 +163,6 @@ const AboutHero = () => {
                       Read Full Story
                       <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                     </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
                   </button>
                 </div>
               </div>

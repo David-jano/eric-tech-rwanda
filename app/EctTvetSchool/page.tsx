@@ -1,618 +1,468 @@
 "use client";
-import React, { useState } from "react";
-import Image from "next/image";
-
+import { useState } from "react";
 import {
-  FaLaptop,
-  FaMobileAlt,
-  FaNetworkWired,
-  FaCertificate,
-  FaClock,
-  FaMoneyBillWave,
-  FaBook,
-  FaTools,
-  FaCalendarAlt,
-  FaUserGraduate,
   FaCheck,
-  FaCogs,
   FaMicrochip,
   FaDesktop,
-  FaServer,
+  FaCogs,
+  FaCertificate,
+  FaClock,
+  FaUserGraduate,
+  FaMoneyBillWave,
+  FaBook,
+  FaCalendarAlt,
+  FaTools,
+  FaChevronDown,
+  FaChevronUp,
+  FaUsers,
+  FaChalkboardTeacher,
+  FaLaptopCode,
+  FaHandsHelping,
 } from "react-icons/fa";
-
-const programs = [
-  {
-    icon: FaTools,
-    title: "Basic Electronics",
-    description:
-      "Fundamentals of electronic components, circuits, and troubleshooting",
-    image: "/images/basic-electronics.jpg",
-    color: "from-blue-500 to-blue-600",
-    major: "electronics",
-  },
-  {
-    icon: FaLaptop,
-    title: "Computer Hardware",
-    description: "PC assembly, maintenance, and repair techniques",
-    image: "/images/computer-hardware.jpg",
-    color: "from-purple-500 to-purple-600",
-    major: "computer",
-  },
-  {
-    icon: FaMobileAlt,
-    title: "Mobile Device Repair",
-    description: "Smartphone and tablet diagnostics and repair",
-    image: "/images/mobile-repair.jpg",
-    color: "from-green-500 to-green-600",
-    major: "electronics",
-  },
-  {
-    icon: FaNetworkWired,
-    title: "CCTV Camera Installation",
-    description: "Basic network setup, configuration, and troubleshooting",
-    image: "/images/networking.jpg",
-    color: "from-orange-500 to-orange-600",
-    major: "computer",
-  },
-];
+import Image from "next/image";
 
 const TrainingPrograms = () => {
-  const [activeProgram, setActiveProgram] = useState(0);
-  const [activeMajor, setActiveMajor] = useState("electronics");
+  const [openMajor, setOpenMajor] = useState<number | null>(null);
+  const [openProgram, setOpenProgram] = useState<number | null>(null);
+  const [activeSpecialization, setActiveSpecialization] =
+    useState("electronics");
 
-  const majorOptions = {
-    electronics: {
-      title: "Electronics Technology",
-      description:
-        "Specialize in electronic devices, circuits, and repair techniques",
-      icon: FaMicrochip,
-      color: "from-blue-500 to-blue-600",
-      image: "/images/electronics-major.jpg",
-      requirements: [
-        "Advanced multimeter and oscilloscope skills",
-        "Component-level circuit analysis",
-        "Soldering and desoldering techniques",
-        "Power supply and amplifier circuits",
-        "Digital electronics fundamentals",
-        "Troubleshooting complex electronic systems",
-      ],
-      tools: [
-        "Advanced multimeter",
-        "Oscilloscope",
-        "Soldering station",
-        "Component tester",
-        "Power supply unit",
-        "Signal generator",
-      ],
-      careerPaths: [
-        "Electronics Technician",
-        "Repair Specialist",
-        "Circuit Designer",
-        "Quality Control Technician",
-      ],
-    },
-    computer: {
-      title: "Computer Systems Technology",
-      description:
-        "Master computer hardware, networking, and system administration",
-      icon: FaDesktop,
-      color: "from-purple-500 to-purple-600",
-      image: "/images/computer-major.jpg",
-      requirements: [
-        "Advanced PC assembly and configuration",
-        "Network infrastructure setup",
-        "Operating system installation and optimization",
-        "Data recovery techniques",
-        "Server administration basics",
-        "Cybersecurity fundamentals",
-      ],
-      tools: [
-        "PC toolkit with specialized tools",
-        "Network cable testers",
-        "Hard drive duplicator",
-        "BIOS programmer",
-        "Data recovery software",
-        "Network analyzer",
-      ],
-      careerPaths: [
-        "Computer Technician",
-        "Network Support Specialist",
-        "IT Support Technician",
-        "System Administrator",
-      ],
-    },
-  };
-
-  const programDetails = [
+  const programs = [
     {
       title: "Basic Electronics",
-      description:
-        "Master the fundamentals of electronic components, circuits, and troubleshooting techniques. This course provides hands-on experience with real electronic devices and equipment.",
-      skills: [
-        "Component identification",
-        "Circuit analysis",
-        "Soldering techniques",
-        "Troubleshooting methods",
-        "Safety procedures",
-      ],
-      image: "/images/pic21_zyzqcu.jpg",
-      major: "electronics",
+      description: "Fundamentals of electronic circuits and components",
+      color: "from-blue-500 to-blue-600",
+      details:
+        "Learn resistors, capacitors, transistors, and basic circuit design. Hands-on experience with real electronic components.",
+      image: "/images/pic20_eh9u9c.jpg",
+    },
+    {
+      title: "Advanced Electronics",
+      description: "Complex circuit analysis and PCB design",
+      color: "from-indigo-500 to-indigo-600",
+      details:
+        "Microcontrollers, sensors, and embedded systems. Design and build your own electronic projects.",
+      image: "/images/vlcsnap-2026-05-08-23h42m58s587.png",
     },
     {
       title: "Computer Hardware",
-      description:
-        "Learn professional PC assembly, maintenance, and repair techniques. Gain practical skills in diagnosing hardware issues and optimizing computer performance.",
-      skills: [
-        "PC assembly",
-        "Hardware diagnostics",
-        "Component replacement",
-        "BIOS configuration",
-        "System optimization",
-      ],
-      image: "/images/computer-hardware-detail.jpg",
-      major: "computer",
+      description: "Assembly, maintenance, and repair of computer systems",
+      color: "from-purple-500 to-purple-600",
+      details:
+        "Motherboards, processors, memory, and storage devices. Learn professional computer repair techniques.",
+      image: "/images/vlcsnap-2026-05-08-23h44m19s071.png",
     },
     {
-      title: "Mobile Device Repair",
-      description:
-        "Become proficient in smartphone and tablet diagnostics and repair. Learn to fix common issues like screen replacement, battery problems, and software troubleshooting.",
-      skills: [
-        "Screen replacement",
-        "Battery diagnostics",
-        "Software issues",
-        "Water damage repair",
-        "Component-level repair",
-      ],
-      image: "/images/mobile-repair-detail.jpg",
-      major: "electronics",
+      title: "Networking Basics",
+      description: "Network setup, configuration, and troubleshooting",
+      color: "from-green-500 to-green-600",
+      details:
+        "IP addressing, routers, switches, and network security. Build and configure real networks.",
+      image: "/images/vlcsnap-2026-05-08-23h45m55s562.png",
+    },
+  ];
+
+  // Student testimonials/photos data
+  const studentShowcase = [
+    {
+      name: "UWAMAHORO Nadia.",
+      role: "Electronics Graduate 2024",
+      quote: "The hands-on training prepared me perfectly for my career.",
+      image: "/images/pic18_nu9o1o.jpg",
     },
     {
-      title: "Networking Fundamentals",
-      description:
-        "Understand basic network setup, configuration, and troubleshooting. Learn to create and maintain small to medium-sized networks for homes and businesses.",
-      skills: [
-        "Network setup",
-        "Router configuration",
-        "Troubleshooting",
-        "Security basics",
-        "Wireless networking",
-      ],
-      image: "/images/networking-detail.jpg",
-      major: "computer",
+      name: "NSENGIMANA Aboubakar",
+      role: "Computer Systems Graduate",
+      quote: "Now working as a certified computer technician.",
+      image: "/images/vlcsnap-2026-05-08-23h45m13s074.png",
+    },
+    {
+      name: "NKURIKIYE Vincent",
+      role: "Electronic Specialist",
+      quote: "The RTB certification opened many doors for me.",
+      image: "/images/pic21_zyzqcu.jpg",
+    },
+    {
+      name: "NSANZIMFURA Jean",
+      role: "Current Student",
+      quote: "Amazing instructors and practical learning environment.",
+      image: "/images/pic20_eh9u9c.jpg",
     },
   ];
 
   return (
-    <section className="relative min-h-screen bg-white overflow-hidden py-16">
-      {/* Header Section */}
-      <div className="container mx-auto px-6">
+    <section className="relative min-h-screen bg-gradient-to-b from-white to-gray-50 py-12">
+      <div className="container mx-auto px-4 max-w-6xl">
+        {/* Header with decorative element */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center space-x-4">
-            <h1 className="text-4xl md:text-4xl font-bold bg-blue-600 bg-clip-text text-transparent">
-              Our Training Programs
-            </h1>
+          <div className="inline-block mb-3">
+            <div className="flex items-center justify-center space-x-2">
+              <div className="w-12 h-0.5 bg-blue-500"></div>
+              <FaUserGraduate className="text-blue-500 text-2xl" />
+              <div className="w-12 h-0.5 bg-blue-500"></div>
+            </div>
           </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-blue-500 mb-5">
+            Training Programs
+          </h1>
+          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
+            Hands-on training in electronic and computer technology with RTB
+            certified certificates
+          </p>
         </div>
 
-        {/* Introductory Section */}
-        <div className="bg-white rounded-3xl p-8 md:p-12 border border-gray-200 shadow-sm mb-16">
-          {/* Title */}
-          <div className="text-center mb-10">
-            <p className="text-xl md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              ECT offers comprehensive training in electronic and computer
-              technology, providing students with{" "}
-              <span className="bg-[#4B73FF] bg-clip-text text-transparent font-bold">
-                hands-on experience
-              </span>{" "}
-              and industry-relevant skills.
-            </p>
-          </div>
-
-          {/* Image + Program Grid */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
-            {/* Left Side Image */}
-            <div className="col-span-1">
-              <img
-                src="/images/pic18_nu9o1o.jpg"
-                alt="ECT Training"
-                className="w-full h-full object-cover rounded-xl shadow-lg"
-              />
-            </div>
-
-            {/* Right Side - Program List */}
-            <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {programs.map((program, index) => (
-                <div
-                  key={index}
-                  className="flex items-start space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-colors duration-300"
-                >
-                  <div
-                    className={`flex-shrink-0 w-12 h-12 bg-gradient-to-r ${program.color} rounded-full flex items-center justify-center mt-1`}
-                  >
-                    {/* Replace checkmark with program.icon if needed */}
-                    <FaCheck className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-2">
-                      {program.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {program.description}
-                    </p>
+        {/* Student Photos Gallery - Hero Section */}
+        <div className="mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {studentShowcase.map((student, idx) => (
+              <div
+                key={idx}
+                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="aspect-square bg-gray-200 relative">
+                  {/* Use actual Image component instead of placeholder */}
+                  <Image
+                    src={student.image}
+                    alt={student.name}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+                  <div className="text-center text-white">
+                    <p className="text-sm font-semibold">{student.name}</p>
+                    <p className="text-xs text-gray-300">{student.role}</p>
+                    <p className="text-xs mt-2">"{student.quote}"</p>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Major Options Section */}
-        <div className="mb-10">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-3xl font-bold bg-[#4B73FF] bg-clip-text text-transparent mb-4">
-              Choose Your Specialization
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Select between our two major technology pathways, each with
-              specific requirements and career outcomes
-            </p>
-          </div>
-
-          {/* Major Selection Tabs */}
-          <div className="flex justify-center mb-20">
-            <div className="bg-white rounded-2xl p-2 border border-gray-200 shadow-lg">
-              <div className="flex space-x-2">
-                <button
-                  onClick={() => setActiveMajor("all")}
-                  className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                    activeMajor === "all"
-                      ? "bg-gradient-to-r from-orange-500 to-orange-600 shadow-lg transform scale-105"
-                      : "text-gray-600 hover:text-gray-800 hover:bg-blue-50"
-                  }`}
-                >
-                  <FaCogs className="w-4 h-4" />
-                  <span>All Programs</span>
-                </button>
-                <button
-                  onClick={() => setActiveMajor("electronics")}
-                  className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                    activeMajor === "electronics"
-                      ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg transform scale-105"
-                      : "text-gray-600 hover:text-gray-800 hover:bg-blue-50"
-                  }`}
-                >
-                  <FaMicrochip className="w-4 h-4" />
-                  <span>Electronics</span>
-                </button>
-                <button
-                  onClick={() => setActiveMajor("computer")}
-                  className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                    activeMajor === "computer"
-                      ? "bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-lg transform scale-105"
-                      : "text-gray-600 hover:text-gray-800 hover:bg-blue-50"
-                  }`}
-                >
-                  <FaDesktop className="w-4 h-4" />
-                  <span>Computer Systems</span>
-                </button>
+        {/* Program Stats Bar */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div className="bg-white rounded-xl p-4 text-center shadow-sm border border-gray-100 group hover:shadow-md transition-shadow">
+            <div className="flex justify-center mb-3">
+              <div className="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <FaUsers className="text-white text-2xl" />
               </div>
             </div>
+            <div className="text-2xl font-bold text-gray-800">500+</div>
+            <div className="text-sm text-gray-600">Students Trained</div>
           </div>
 
-          {/* Major Details */}
-          <div className="grid lg:grid-cols-2 gap-8 mb-12">
-            {/* Electronics Major */}
-            <div
-              className={`bg-white rounded-3xl p-8 border border-gray-200 shadow-sm transition-all duration-500 ${
-                activeMajor === "electronics"
-                  ? "ring-2 ring-blue-500 transform scale-105"
-                  : ""
+          <div className="bg-white rounded-xl p-4 text-center shadow-sm border border-gray-100 group hover:shadow-md transition-shadow">
+            <div className="flex justify-center mb-3">
+              <div className="w-14 h-14 rounded-full bg-green-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <FaChalkboardTeacher className="text-white text-2xl" />
+              </div>
+            </div>
+            <div className="text-2xl font-bold text-gray-800">7+</div>
+            <div className="text-sm text-gray-600">Expert Instructors</div>
+          </div>
+
+          <div className="bg-white rounded-xl p-4 text-center shadow-sm border border-gray-100 group hover:shadow-md transition-shadow">
+            <div className="flex justify-center mb-3">
+              <div className="w-14 h-14 rounded-full bg-purple-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <FaLaptopCode className="text-white text-2xl" />
+              </div>
+            </div>
+            <div className="text-2xl font-bold text-gray-800">95%</div>
+            <div className="text-sm text-gray-600">Employment Rate</div>
+          </div>
+
+          <div className="bg-white rounded-xl p-4 text-center shadow-sm border border-gray-100 group hover:shadow-md transition-shadow">
+            <div className="flex justify-center mb-3">
+              <div className="w-14 h-14 rounded-full bg-orange-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <FaHandsHelping className="text-white text-2xl" />
+              </div>
+            </div>
+            <div className="text-2xl font-bold text-gray-800">2+</div>
+            <div className="text-sm text-gray-600">Partner Companies</div>
+          </div>
+        </div>
+
+        {/* Simple Program List - Accordion Style with Images */}
+        <div className="space-y-3 mb-12">
+          {programs.map((program, idx) => {
+            const [imgError, setImgError] = useState(false);
+
+            return (
+              <div
+                key={idx}
+                className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow"
+              >
+                <button
+                  onClick={() =>
+                    setOpenProgram(openProgram === idx ? null : idx)
+                  }
+                  className="w-full flex justify-between items-center p-5 bg-white hover:bg-gray-50 transition-colors"
+                >
+                  <div className="flex items-center space-x-3">
+                    <div
+                      className={`w-10 h-10 bg-gradient-to-r ${program.color} rounded-lg flex items-center justify-center`}
+                    >
+                      <FaCheck className="w-4 h-4 text-white" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-bold text-gray-800">
+                        {program.title}
+                      </h3>
+                      <p className="text-sm text-gray-500">
+                        {program.description}
+                      </p>
+                    </div>
+                  </div>
+                  {openProgram === idx ? (
+                    <FaChevronUp className="text-gray-400" />
+                  ) : (
+                    <FaChevronDown className="text-gray-400" />
+                  )}
+                </button>
+
+                {openProgram === idx && (
+                  <div className="p-5 bg-gray-50 border-t border-gray-200">
+                    <div className="flex flex-col md:flex-row gap-4">
+                      <div className="md:w-1/3">
+                        <div className="relative rounded-lg h-32 overflow-hidden bg-gray-300">
+                          {!imgError ? (
+                            <Image
+                              src={program.image}
+                              alt={`Student working on ${program.title}`}
+                              fill
+                              className="object-cover"
+                              onError={() => setImgError(true)}
+                            />
+                          ) : (
+                            // Fallback when image fails to load
+                            <div className="w-full h-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white">
+                              <div className="text-center">
+                                <FaUserGraduate className="text-3xl mx-auto" />
+                                <p className="text-xs mt-1">
+                                  Student working on {program.title}
+                                </p>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      <div className="md:w-2/3">
+                        <p className="text-gray-700">{program.details}</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Specialization Selection with Improved Toggle */}
+        <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 mb-10 shadow-sm border border-gray-100">
+          <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">
+            Choose Your Specialization
+          </h2>
+          <p className="text-center text-gray-600 mb-6">
+            Select your preferred path and get certified in your area of
+            expertise
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-3 mb-8">
+            <button
+              onClick={() => setActiveSpecialization("electronics")}
+              className={`px-8 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-2 ${
+                activeSpecialization === "electronics"
+                  ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg transform scale-105"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-                  <FaMicrochip className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-800">
-                    Electronics Technology
-                  </h3>
-                  <p className="text-gray-600">
-                    Specialize in electronic devices and circuits
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-gray-100 rounded-2xl h-48 flex items-center justify-center mb-6 border border-blue-200 overflow-hidden">
-                <Image
-                  src="/images/pic21_zyzqcu.jpg"
-                  alt="Electronics Lab"
-                  width={400}
-                  height={200}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-800 mb-3">
-                    Specific Requirements:
-                  </h4>
-                  <ul className="space-y-2">
-                    {majorOptions.electronics.requirements.map((req, index) => (
-                      <li key={index} className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                        <span className="text-gray-700">{req}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-800 mb-3">
-                    Specialized Tools:
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {majorOptions.electronics.tools.map((tool, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm"
-                      >
-                        {tool}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-800 mb-3">
-                    Career Paths:
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {majorOptions.electronics.careerPaths.map(
-                      (career, index) => (
-                        <span
-                          key={index}
-                          className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm"
-                        >
-                          {career}
-                        </span>
-                      ),
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Computer Systems Major */}
-            <div
-              className={`bg-white rounded-3xl p-8 border border-gray-200 shadow-sm transition-all duration-500 ${
-                activeMajor === "computer"
-                  ? "ring-2 ring-purple-500 transform scale-105"
-                  : ""
+              <FaMicrochip />
+              <span>Electronics Technology</span>
+            </button>
+            <button
+              onClick={() => setActiveSpecialization("computer")}
+              className={`px-8 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-2 ${
+                activeSpecialization === "computer"
+                  ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-lg transform scale-105"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
-                  <FaDesktop className="w-8 h-8 text-white" />
+              <FaDesktop />
+              <span>Computer Systems</span>
+            </button>
+          </div>
+
+          {/* Detailed Info Cards based on selection */}
+          {activeSpecialization === "electronics" && (
+            <div className="grid md:grid-cols-2 gap-4 animate-fadeIn">
+              <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                <div className="flex items-center space-x-2 mb-3">
+                  <FaMicrochip className="text-blue-500 text-xl" />
+                  <h3 className="font-bold text-gray-800">Electronics</h3>
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-800">
-                    Computer Systems and Architecture
-                  </h3>
-                  <p className="text-gray-600">
-                    Master computer hardware and networking
-                  </p>
-                </div>
+                <p className="text-sm text-gray-600 mb-2">
+                  <strong>Specialized tools:</strong> Oscilloscope, Multimeter,
+                  Soldering Station
+                </p>
+                <p className="text-sm text-gray-600 mb-2">
+                  <strong>Career paths:</strong> Electronics Technician, PCB
+                  Designer, Repair Specialist
+                </p>
+                <p className="text-sm text-gray-600">
+                  <strong>Requirements:</strong> Basic math & physics knowledge
+                </p>
               </div>
-
-              <div className="bg-gray-100 rounded-2xl h-48 flex items-center justify-center mb-6 border border-blue-200 overflow-hidden">
-                <Image
-                  src="/images/pic20_eh9u9c.jpg"
-                  alt="Electronics Lab"
-                  width={400}
-                  height={200}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-800 mb-3">
-                    Specific Requirements:
-                  </h4>
-                  <ul className="space-y-2">
-                    {majorOptions.computer.requirements.map((req, index) => (
-                      <li key={index} className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                        <span className="text-gray-700">{req}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-800 mb-3">
-                    Specialized Tools:
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {majorOptions.computer.tools.map((tool, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm"
-                      >
-                        {tool}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-800 mb-3">
-                    Career Paths:
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {majorOptions.computer.careerPaths.map((career, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm"
-                      >
-                        {career}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+              <div className="bg-blue-50 p-5 rounded-xl border border-blue-100">
+                <h3 className="font-bold text-gray-800 mb-2">
+                  What You'll Learn
+                </h3>
+                <ul className="text-sm text-gray-600 space-y-1">
+                  <li>• Circuit design and analysis</li>
+                  <li>• Microcontroller programming</li>
+                  <li>• PCB design and manufacturing</li>
+                  <li>• Equipment troubleshooting</li>
+                </ul>
               </div>
             </div>
+          )}
+
+          {activeSpecialization === "computer" && (
+            <div className="grid md:grid-cols-2 gap-4 animate-fadeIn">
+              <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                <div className="flex items-center space-x-2 mb-3">
+                  <FaDesktop className="text-purple-500 text-xl" />
+                  <h3 className="font-bold text-gray-800">Computer Systems</h3>
+                </div>
+                <p className="text-sm text-gray-600 mb-2">
+                  <strong>Specialized tools:</strong> Diagnostic Cards, Crimping
+                  Tools, Network Testers
+                </p>
+                <p className="text-sm text-gray-600 mb-2">
+                  <strong>Career paths:</strong> Computer Technician, Network
+                  Admin, IT Support
+                </p>
+                <p className="text-sm text-gray-600">
+                  <strong>Requirements:</strong> Basic computer literacy
+                </p>
+              </div>
+              <div className="bg-purple-50 p-5 rounded-xl border border-purple-100">
+                <h3 className="font-bold text-gray-800 mb-2">
+                  What You'll Learn
+                </h3>
+                <ul className="text-sm text-gray-600 space-y-1">
+                  <li>• Computer assembly & repair</li>
+                  <li>• Network configuration</li>
+                  <li>• Hardware troubleshooting</li>
+                  <li>• System maintenance</li>
+                </ul>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Key Info with Icons */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+          <div className="bg-white border border-gray-200 rounded-xl p-5 text-center hover:shadow-md transition-shadow group">
+            <div className="flex justify-center mb-3">
+              <div className="w-14 h-14 rounded-full bg-amber-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <FaCertificate className="text-white text-2xl" />
+              </div>
+            </div>
+            <h3 className="font-bold text-gray-800">RTB Certified</h3>
+            <p className="text-sm text-gray-600">
+              Nationally recognized certificates
+            </p>
+          </div>
+
+          <div className="bg-white border border-gray-200 rounded-xl p-5 text-center hover:shadow-md transition-shadow group">
+            <div className="flex justify-center mb-3">
+              <div className="w-14 h-14 rounded-full bg-green-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <FaClock className="text-white text-2xl" />
+              </div>
+            </div>
+            <h3 className="font-bold text-gray-800">6 Months Course</h3>
+            <p className="text-sm text-gray-600">Flexible schedule options</p>
+          </div>
+
+          <div className="bg-white border border-gray-200 rounded-xl p-5 text-center hover:shadow-md transition-shadow group">
+            <div className="flex justify-center mb-3">
+              <div className="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <FaMoneyBillWave className="text-white text-2xl" />
+              </div>
+            </div>
+            <h3 className="font-bold text-gray-800">Affordable Fees</h3>
+            <p className="text-sm text-gray-600">
+              300,000 RWF (10k registration)
+            </p>
+          </div>
+
+          <div className="bg-white border border-gray-200 rounded-xl p-5 text-center hover:shadow-md transition-shadow group">
+            <div className="flex justify-center mb-3">
+              <div className="w-14 h-14 rounded-full bg-purple-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <FaCalendarAlt className="text-white text-2xl" />
+              </div>
+            </div>
+            <h3 className="font-bold text-gray-800">Flexible Schedule</h3>
+            <p className="text-sm text-gray-600">
+              Morning or afternoon classes
+            </p>
           </div>
         </div>
 
-        {/* Certification & Details Section */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {/* Certification Card */}
-          <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm">
-            <div className="text-center mb-6">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-500 rounded-xl mb-4">
-                <FaCertificate className="w-8 h-8 text-white" />
+        {/* Compact Requirements with better styling */}
+        <details className="bg-gradient-to-r from-gray-50 to-white rounded-xl p-4 border border-gray-200">
+          <summary className="font-semibold text-gray-800 cursor-pointer hover:text-blue-600 transition-colors">
+            Additional Requirements & Fees
+          </summary>
+          <div className="mt-4 pt-4 border-t border-gray-200">
+            <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+              <div>
+                <p className="font-semibold mb-2">Required Materials:</p>
+                <p>• Uniform: 12,000 RWF</p>
+                <p>• Screwdriver set & 2 notebooks</p>
+                <p>• Portfolio for documents</p>
               </div>
-              <h3 className="text-3xl font-bold text-gray-800 mb-4">
-                RTB Certified Certificates
-              </h3>
+              <div>
+                <p className="font-semibold mb-2">Schedule:</p>
+                <p>• Monday - Friday</p>
+                <p>• Morning: 8:00 - 12:00</p>
+                <p>• Afternoon: 13:00 - 17:00</p>
+              </div>
             </div>
-            <p className="text-lg text-gray-600 leading-relaxed text-center mb-6">
-              Upon successful completion, students receive official RTB
-              certified certificates recognized nationwide.
-            </p>
-            <div className="bg-blue-50 rounded-xl p-4 text-center">
-              <p className="text-blue-700 font-semibold">
-                Certificate recognized by Rwanda TVET Board
+            <div className="mt-3 p-3 bg-yellow-50 rounded-lg border border-yellow-200">
+              <p className="text-yellow-700 text-sm text-center">
+                <strong>Note:</strong> Public holidays are respected. Classes
+                will not be held on official public holidays.
               </p>
             </div>
           </div>
+        </details>
 
-          {/* Course Details Card */}
-          <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm">
-            <div className="text-center mb-6">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500 rounded-xl mb-4">
-                <FaClock className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-3xl font-bold text-gray-800 mb-4">
-                Course Details
-              </h3>
-            </div>
-
-            <div className="space-y-6">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <FaUserGraduate className="w-5 h-5 text-blue-500" />
-                  <span className="text-gray-700">Course Duration:</span>
-                </div>
-                <span className="font-semibold text-gray-800">6 Months</span>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <FaMoneyBillWave className="w-5 h-5 text-blue-500" />
-                  <span className="text-gray-700">Course Fee:</span>
-                </div>
-                <span className="font-semibold text-gray-800">300,000 RWF</span>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <FaBook className="w-5 h-5 text-blue-500" />
-                  <span className="text-gray-700">Registration Fee:</span>
-                </div>
-                <span className="font-semibold text-gray-800">10,000 RWF</span>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <FaCalendarAlt className="w-5 h-5 text-blue-500" />
-                  <span className="text-gray-700">Schedule:</span>
-                </div>
-                <span className="font-semibold text-gray-800 text-right">
-                  Mon-Fri: 8:00-12:00
-                  <br />
-                  or 13:00-17:00
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Additional Requirements */}
-        <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm mb-16">
-          <h3 className="text-3xl font-bold text-gray-800 mb-6 text-center">
-            Additional Requirements
-          </h3>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-gray-800 flex items-center">
-                <FaMoneyBillWave className="w-5 h-5 text-green-500 mr-2" />
-                Additional Fees
-              </h4>
-              <ul className="space-y-2">
-                <li className="flex justify-between">
-                  <span className="text-gray-700">Uniform:</span>
-                  <span className="font-semibold text-gray-800">
-                    12,000 RWF
-                  </span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-gray-700">Portfolio:</span>
-                  <span className="font-semibold text-gray-800">
-                    Required for documents
-                  </span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-gray-800 flex items-center">
-                <FaTools className="w-5 h-5 text-blue-500 mr-2" />
-                Required Materials
-              </h4>
-              <ul className="space-y-2">
-                <li className="flex items-center">
-                  <span className="text-gray-700">
-                    Screwdriver set (screw boxes)
-                  </span>
-                </li>
-                <li className="flex items-center">
-                  <span className="text-gray-700">
-                    At least 2 big notebooks
-                  </span>
-                </li>
-                <li className="flex items-center">
-                  <span className="text-gray-700">
-                    Portfolio for enclosing documents
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-6 p-4 bg-yellow-50 rounded-xl border border-yellow-200">
-            <p className="text-yellow-700 text-center">
-              <strong>Note:</strong> Public holidays are respected. Classes will
-              not be held on official public holidays.
-            </p>
-          </div>
+        {/* Call to Action */}
+        <div className="mt-12 text-center">
+          <button className="bg-gradient-to-r from-blue-600 to-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+            Apply Now - Limited Slots Available
+          </button>
+          <p className="text-sm text-gray-500 mt-3">
+            Contact us for more information or to schedule a campus visit
+          </p>
         </div>
       </div>
 
+      {/* Add animation styles */}
       <style jsx>{`
-        @keyframes spin-slow {
+        @keyframes fadeIn {
           from {
-            transform: rotate(0deg);
+            opacity: 0;
+            transform: translateY(10px);
           }
           to {
-            transform: rotate(360deg);
+            opacity: 1;
+            transform: translateY(0);
           }
         }
-        .animate-spin-slow {
-          animation: spin-slow 12s linear infinite;
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out;
         }
       `}</style>
     </section>

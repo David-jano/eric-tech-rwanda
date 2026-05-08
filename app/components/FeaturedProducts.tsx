@@ -122,7 +122,7 @@ const FeaturedProducts = () => {
             Featured Products
           </h2>
           <p className="text-xl text-gray-600">
-            High-quality electronics and IT equipment available at EricTech Ltd
+            High-quality electronics and IT equipment available at Eric Tech Ltd
             in Kigali, Rwanda
           </p>
           {totalProducts > 0 && (

@@ -156,8 +156,15 @@ const Footer = () => {
             </h4>
             <div className="space-y-2 text-gray-400 text-sm">
               <p className="flex items-center space-x-2">
-                <FaMapMarkerAlt className="w-4 h-4 text-gray-400" />
-                <span>Kimisagara, Kigali City, KN 20 Ave Street</span>
+                <FaMapMarkerAlt className="w-4 h-4 text-gray-400 flex-shrink-0 mt-1" />
+                <a
+                  href="https://maps.app.goo.gl/33C52DQCfmYCv2Yy7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Kimisagara, Kigali City, KN 20 Ave Street
+                </a>
               </p>
               <p className="flex items-center space-x-2">
                 <FaPhoneAlt className="w-4 h-4 text-gray-400" />
