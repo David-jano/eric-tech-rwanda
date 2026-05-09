@@ -112,7 +112,6 @@ const EricTechWebsite = () => {
       <FAQSection />
       <CommentSection />
       <SocialMediaSection />
-      <Chatbot />
     </div>
   );
 };
