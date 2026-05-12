@@ -42,10 +42,9 @@ const AboutSection = () => {
       color: "from-purple-500 to-purple-600",
     },
     {
-      icon:   FaBookOpen,
+      icon: FaBookOpen,
       title: "Internship Programs",
-      description:
-        "Expert Trainers for both secondary and University students",
+      description: "Expert Trainers for both secondary and University students",
       color: "from-green-500 to-green-600",
     },
     {
@@ -93,7 +92,7 @@ const AboutSection = () => {
           {/* Tab Content */}
           <div className="max-w-6xl mx-auto">
             {activeTab === "story" && (
-              <div className="bg-white rounded-3xl p-8 md:p-12 border border-gray-200 shadow-xl mb-5">
+              <div className="bg-white rounded-3xl p-8 md:p-12 border border-gray-200 shadow-sm mb-5">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                   <div>
                     <h2 className="text-4xl font-bold text-gray-800 mb-6">
@@ -152,8 +151,8 @@ const AboutSection = () => {
             )}
 
             {activeTab === "mission" && (
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-xl">
+              <div className="grid md:grid-cols-2 gap-8 mb-10">
+                <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-xl ">
                   <div className="text-center mb-6">
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-xl mb-4">
                       <FaBullseye className="w-8 h-8 text-white" />
@@ -194,7 +193,7 @@ const AboutSection = () => {
                 {/* Vertical timeline line */}
                 <div className="absolute left-8 transform -translate-x-1/2 w-4  h-full rounded-full hidden md:block"></div>
 
-                <div className="py-20 bg-gray-50">
+                <div className="py-6 bg-gray-50">
                   {/* Heading */}
                   <div className="text-center mb-16">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -295,7 +294,7 @@ const AboutSection = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-2xl p-6 border border-gray-200 shadow-lg text-center hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 transform hover:-translate-y-3"
+                className="group bg-white rounded-2xl p-6 border border-gray-200 shadow-sm text-center hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 transform hover:-translate-y-3"
               >
                 <div
                   className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${service.color} rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300`}
@@ -317,7 +316,7 @@ const AboutSection = () => {
       <div className="bg-gradient-to-br from-gray-50 to-indigo-10 min-h-[50vh] flex items-center p-10">
         <div className="container mx-auto px-6 md:w-2/3 w-full border-sm">
           <div className="text-center">
-            <div className="bg-white rounded-3xl p-8 md:p-12 border border-blue-200 shadow-xl">
+            <div className="bg-white rounded-3xl p-8 md:p-12 border border-blue-200 shadow-md">
               <h2 className="text-4xl md:text-3xl font-bold text-gray-800 mb-6">
                 Ready to Transform Your Tech Experience?
               </h2>

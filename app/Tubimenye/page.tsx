@@ -1,117 +1,98 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import {
   FaTv,
   FaSatelliteDish,
   FaYoutube,
   FaPlay,
   FaCalendarAlt,
-  FaEye,
-  FaClock,
   FaList,
   FaThLarge,
 } from "react-icons/fa";
 
-// YouTube API response types
-interface YouTubeVideo {
+const TUBIMENYE_PLAYLIST_ID = "PLVA6X1Cp4EqKkf6AA5U-UCz60TKWfiVIU";
+
+interface Video {
   id: string;
-  snippet: {
-    title: string;
-    description: string;
-    publishedAt: string;
-    thumbnails: {
-      medium: { url: string; width: number; height: number };
-      high: { url: string; width: number; height: number };
-    };
-    resourceId: { videoId: string };
-  };
-  contentDetails: { duration: string };
-  statistics: { viewCount: string };
+  title: string;
+  publishedAt: string;
+  description: string;
 }
 
-const TUBIMENYE_PLAYLIST_ID = "PLVA6X1Cp4EqKkf6AA5U-UCz60TKWfiVIU";
-const YOUTUBE_API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY; // You'll need to add this
-
 export default function TubimenyeShows() {
-  const [videos, setVideos] = useState<YouTubeVideo[]>([]);
+  const [videos, setVideos] = useState<Video[]>([]);
   const [loading, setLoading] = useState(true);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [visibleCount, setVisibleCount] = useState(3); // Show only 3 cards initially
 
   useEffect(() => {
-    fetchPlaylistVideos();
+    const fetchPlaylist = async () => {
+      try {
+        // Call our own API route instead of external proxy
+        const response = await fetch("/api/youtube");
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const xmlText = await response.text();
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlText, "text/xml");
+
+        // Check for parser errors
+        const parserError = xmlDoc.querySelector("parsererror");
+        if (parserError) {
+          throw new Error("XML parsing error");
+        }
+
+        const entries = xmlDoc.querySelectorAll("entry");
+
+        if (entries.length === 0) {
+          throw new Error("No entries found");
+        }
+
+        const videoList: Video[] = Array.from(entries).map((entry, idx) => ({
+          id:
+            entry.querySelector("yt\\:videoId")?.textContent ||
+            entry.querySelector("videoId")?.textContent ||
+            `video-${idx}`,
+          title:
+            entry.querySelector("title")?.textContent || "Untitled Episode",
+          publishedAt:
+            entry.querySelector("published")?.textContent ||
+            new Date().toISOString(),
+          description: entry.querySelector("summary")?.textContent || "",
+        }));
+
+        setVideos(videoList);
+      } catch (error) {
+        console.error("Error fetching videos:", error);
+        // Set empty array on error
+        setVideos([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPlaylist();
   }, []);
 
-  const fetchPlaylistVideos = async () => {
+  const formatDate = (dateString: string) => {
     try {
-      // If you have an API key, fetch real data
-      if (YOUTUBE_API_KEY) {
-        const response = await fetch(
-          `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=30&playlistId=${TUBIMENYE_PLAYLIST_ID}&key=${YOUTUBE_API_KEY}`,
-        );
-        const data = await response.json();
-
-        // Fetch statistics for each video
-        const videoIds = data.items
-          .map((item: any) => item.snippet.resourceId.videoId)
-          .join(",");
-        const statsResponse = await fetch(
-          `https://www.googleapis.com/youtube/v3/videos?part=statistics,contentDetails&id=${videoIds}&key=${YOUTUBE_API_KEY}`,
-        );
-        const statsData = await statsResponse.json();
-
-        const videosWithStats = data.items.map((item: any) => {
-          const stats = statsData.items.find(
-            (stat: any) => stat.id === item.snippet.resourceId.videoId,
-          );
-          return {
-            ...item,
-            statistics: stats?.statistics || { viewCount: "0" },
-            contentDetails: stats?.contentDetails || { duration: "" },
-          };
-        });
-
-        setVideos(videosWithStats);
-      } else {
-        // Fallback mock data based on your playlist
-        setVideos(mockVideos);
-      }
-    } catch (error) {
-      console.error("Error fetching playlist:", error);
-      setVideos(mockVideos);
-    } finally {
-      setLoading(false);
+      const date = new Date(dateString);
+      return date.toLocaleDateString("en-RW", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
+    } catch {
+      return "Date unavailable";
     }
   };
 
-  const formatDuration = (duration: string) => {
-    if (!duration) return "";
-    const match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
-    const hours = (match?.[1] || "").replace("H", "");
-    const minutes = (match?.[2] || "").replace("M", "");
-    const seconds = (match?.[3] || "").replace("S", "");
-    if (hours)
-      return `${hours}:${minutes.padStart(2, "0")}:${seconds.padStart(2, "0")}`;
-    return `${minutes}:${seconds.padStart(2, "0")}`;
-  };
-
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-RW", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    });
-  };
-
-  const formatViews = (views: string) => {
-    const num = parseInt(views);
-    if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M`;
-    if (num >= 1000) return `${(num / 1000).toFixed(1)}K`;
-    return num.toString();
+  const loadMore = () => {
+    setVisibleCount((prev) => prev + 3); // Load 3 more each time
   };
 
   if (loading) {
@@ -124,6 +105,9 @@ export default function TubimenyeShows() {
       </div>
     );
   }
+
+  const displayedVideos = videos.slice(0, visibleCount);
+  const hasMore = visibleCount < videos.length;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-blue-900">
@@ -195,123 +179,149 @@ export default function TubimenyeShows() {
         <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
           <div>
             <h2 className="text-3xl font-bold text-white mb-2">All Episodes</h2>
-            <p className="text-gray-400">{videos.length} episodes available</p>
+            <p className="text-gray-400">
+              {videos.length > 0
+                ? `${videos.length} episodes available`
+                : "Loading episodes..."}
+            </p>
           </div>
-          <div className="flex gap-2 bg-white/10 rounded-xl p-1">
-            <button
-              onClick={() => setViewMode("grid")}
-              className={`px-4 py-2 rounded-lg flex items-center gap-2 transition-all ${
-                viewMode === "grid"
-                  ? "bg-orange-500 text-white"
-                  : "text-gray-400 hover:text-white"
-              }`}
-            >
-              <FaThLarge /> Grid
-            </button>
-            <button
-              onClick={() => setViewMode("list")}
-              className={`px-4 py-2 rounded-lg flex items-center gap-2 transition-all ${
-                viewMode === "list"
-                  ? "bg-orange-500 text-white"
-                  : "text-gray-400 hover:text-white"
-              }`}
-            >
-              <FaList /> List
-            </button>
-          </div>
+          {videos.length > 0 && (
+            <div className="flex gap-2 bg-white/10 rounded-xl p-1">
+              <button
+                onClick={() => setViewMode("grid")}
+                className={`px-4 py-2 rounded-lg flex items-center gap-2 transition-all ${
+                  viewMode === "grid"
+                    ? "bg-orange-500 text-white"
+                    : "text-gray-400 hover:text-white"
+                }`}
+              >
+                <FaThLarge /> Grid
+              </button>
+              <button
+                onClick={() => setViewMode("list")}
+                className={`px-4 py-2 rounded-lg flex items-center gap-2 transition-all ${
+                  viewMode === "list"
+                    ? "bg-orange-500 text-white"
+                    : "text-gray-400 hover:text-white"
+                }`}
+              >
+                <FaList /> List
+              </button>
+            </div>
+          )}
         </div>
 
-        {viewMode === "grid" ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {videos.map((video, index) => (
-              <div
-                key={video.id}
-                className="group bg-white/5 backdrop-blur-md rounded-2xl overflow-hidden border border-white/10 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-105"
-              >
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src="/images/tubimenye.jpg"
-                    alt={video.snippet.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <a
-                      href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-orange-500 text-white p-4 rounded-full hover:bg-orange-600 transition-colors"
-                    >
-                      <FaPlay className="w-6 h-6" />
-                    </a>
+        {videos.length > 0 ? (
+          <>
+            {viewMode === "grid" ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {displayedVideos.map((video, index) => (
+                  <div
+                    key={video.id}
+                    className="group bg-white/5 backdrop-blur-md rounded-2xl overflow-hidden border border-white/10 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                  >
+                    <div className="relative aspect-video overflow-hidden">
+                      <img
+                        src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                        alt={video.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src =
+                            `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <a
+                          href={`https://www.youtube.com/watch?v=${video.id}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-orange-500 text-white p-4 rounded-full hover:bg-orange-600 transition-colors"
+                        >
+                          <FaPlay className="w-6 h-6" />
+                        </a>
+                      </div>
+                    </div>
+                    <div className="p-4">
+                      <h3 className="text-white font-semibold text-lg mb-2 line-clamp-2">
+                        {index + 1}. {video.title}
+                      </h3>
+                      <div className="flex items-center gap-4 text-gray-400 text-sm">
+                        <span className="flex items-center gap-1">
+                          <FaCalendarAlt className="w-3 h-3" />
+                          {formatDate(video.publishedAt)}
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                    {formatDuration(video.contentDetails?.duration || "")}
-                  </div>
-                </div>
-                <div className="p-4">
-                  <h3 className="text-white font-semibold text-lg mb-2 line-clamp-2">
-                    {index + 1}. {video.snippet.title}
-                  </h3>
-                  <div className="flex items-center gap-4 text-gray-400 text-sm">
-                    <span className="flex items-center gap-1">
-                      <FaCalendarAlt className="w-3 h-3" />
-                      {formatDate(video.snippet.publishedAt)}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <FaEye className="w-3 h-3" />
-                      {formatViews(video.statistics?.viewCount || "0")} views
-                    </span>
-                  </div>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
+            ) : (
+              <div className="space-y-3">
+                {displayedVideos.map((video, index) => (
+                  <a
+                    key={video.id}
+                    href={`https://www.youtube.com/watch?v=${video.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block bg-white/5 hover:bg-white/10 rounded-xl p-4 transition-all duration-300 border border-white/10 hover:border-orange-500/50"
+                  >
+                    <div className="flex gap-4">
+                      <div className="relative w-40 flex-shrink-0">
+                        <img
+                          src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
+                          alt={video.title}
+                          className="w-full rounded-lg"
+                        />
+                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center">
+                          <FaPlay className="text-white text-2xl" />
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-white font-semibold text-lg mb-2">
+                          {index + 1}. {video.title}
+                        </h3>
+                        <p className="text-gray-400 text-sm line-clamp-2 mb-2">
+                          {video.description}
+                        </p>
+                        <div className="flex flex-wrap gap-4 text-gray-500 text-sm">
+                          <span className="flex items-center gap-1">
+                            <FaCalendarAlt className="w-3 h-3" />
+                            {formatDate(video.publishedAt)}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            )}
+
+            {/* Show More Button */}
+            {hasMore && (
+              <div className="text-center mt-10">
+                <button
+                  onClick={loadMore}
+                  className="bg-orange-500 text-white px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors font-semibold"
+                >
+                  Show More Episodes ({videos.length - visibleCount} remaining)
+                </button>
+              </div>
+            )}
+          </>
         ) : (
-          <div className="space-y-3">
-            {videos.map((video, index) => (
-              <a
-                key={video.id}
-                href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block bg-white/5 hover:bg-white/10 rounded-xl p-4 transition-all duration-300 border border-white/10 hover:border-orange-500/50"
-              >
-                <div className="flex gap-4">
-                  <div className="relative w-40 flex-shrink-0">
-                    <img
-                      src="/images/tubimenye.jpg"
-                      alt={video.snippet.title}
-                      className="w-full rounded-lg"
-                    />
-                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center">
-                      <FaPlay className="text-white text-2xl" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-white font-semibold text-lg mb-2">
-                      {index + 1}. {video.snippet.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm line-clamp-2 mb-2">
-                      {video.snippet.description}
-                    </p>
-                    <div className="flex flex-wrap gap-4 text-gray-500 text-sm">
-                      <span className="flex items-center gap-1">
-                        <FaCalendarAlt className="w-3 h-3" />
-                        {formatDate(video.snippet.publishedAt)}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <FaEye className="w-3 h-3" />
-                        {formatViews(video.statistics?.viewCount || "0")} views
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <FaClock className="w-3 h-3" />
-                        {formatDuration(video.contentDetails?.duration || "")}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            ))}
+          <div className="text-center py-12">
+            <p className="text-gray-400 mb-4">
+              Unable to load episode list. Please use the YouTube playlist above
+              to watch episodes.
+            </p>
+            <a
+              href={`https://www.youtube.com/playlist?list=${TUBIMENYE_PLAYLIST_ID}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors"
+            >
+              <FaYoutube /> Watch Playlist on YouTube
+            </a>
           </div>
         )}
       </section>
@@ -345,32 +355,3 @@ export default function TubimenyeShows() {
     </div>
   );
 }
-
-// Mock data for fallback (based on your playlist)
-const mockVideos: YouTubeVideo[] = [
-  {
-    id: "vid1",
-    snippet: {
-      title: "#TUBIMENYE - Episode 1: Introduction to Tech in Rwanda",
-      description:
-        "Welcome to #TUBIMENYE, where we explore technology in Rwanda",
-      publishedAt: "2025-03-28T00:00:00Z",
-      thumbnails: {
-        medium: {
-          url: "https://img.youtube.com/vi/placeholder/tubimenye.jpg",
-          width: 320,
-          height: 180,
-        },
-        high: {
-          url: "https://img.youtube.com/vi/placeholder/0.jpg",
-          width: 480,
-          height: 360,
-        },
-      },
-      resourceId: { videoId: "placeholder1" },
-    },
-    contentDetails: { duration: "PT15M30S" },
-    statistics: { viewCount: "754" },
-  },
-  // ... more mock videos would be here
-];

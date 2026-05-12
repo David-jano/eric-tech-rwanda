@@ -49,6 +49,46 @@ const ServicesSection = () => {
 
   const mainServices = [
     {
+      title: "Training Programs",
+      subtitle: "Expert Trainers & Tools",
+      icon: FaTools,
+      gradient: "from-green-500 to-green-600",
+      description: "We Accept all level of students ",
+      features: [
+        "REB Students",
+        "TVET Students",
+        "WDA Students",
+        "University Students",
+      ],
+      products: [
+        "Hardware Repair",
+        "Software Installation",
+        "Data Recovery",
+        "System Optimization",
+      ],
+    },
+    {
+      title: "ECT TVET School",
+      subtitle: "Technical Education & Training",
+      icon: FaGraduationCap,
+      gradient: "from-orange-500 to-orange-600",
+      description:
+        "Comprehensive technical education programs designed to build tomorrow tech professionals.",
+      features: [
+        "CCTV Camera installations",
+        "Television Repair",
+        "Radio Repair",
+        "Sound systems",
+      ],
+      products: [
+        "IT Fundamentals",
+        "Network Administration",
+        "Software Development",
+        "Hardware Maintenance",
+      ],
+    },
+
+    {
       title: "Electronics Devices",
       subtitle: "High-Quality Computing Solutions",
       icon: FaLaptop,
@@ -88,46 +128,6 @@ const ServicesSection = () => {
         "Storage Solutions",
       ],
     },
-    {
-      title: "Technical Support",
-      subtitle: "Expert Repair & Maintenance",
-      icon: FaTools,
-      gradient: "from-green-500 to-green-600",
-      description:
-        "Professional repair services and technical support for all your technology needs.",
-      features: [
-        "Certified Technicians",
-        "Quick Turnaround",
-        "Warranty Protection",
-        "Remote Support Available",
-      ],
-      products: [
-        "Hardware Repair",
-        "Software Installation",
-        "Data Recovery",
-        "System Optimization",
-      ],
-    },
-    {
-      title: "ECT TVET School",
-      subtitle: "Technical Education & Training",
-      icon: FaGraduationCap,
-      gradient: "from-orange-500 to-orange-600",
-      description:
-        "Comprehensive technical education programs designed to build tomorrow&apos;s tech professionals.",
-      features: [
-        "Industry-Certified Instructors",
-        "Hands-On Training",
-        "Job Placement Assistance",
-        "Modern Facilities",
-      ],
-      products: [
-        "IT Fundamentals",
-        "Network Administration",
-        "Software Development",
-        "Hardware Maintenance",
-      ],
-    },
   ];
 
   const additionalServices = [
@@ -138,9 +138,9 @@ const ServicesSection = () => {
     },
     {
       icon: FaWifi,
-      title: "Printing Solutions",
+      title: "ECT TVET School",
       description:
-        "Efficient printing technology for home and business environments",
+        "Teaching Skills in Electronics and computer systems in 6 months",
     },
     {
       icon: FaDatabase,
@@ -150,9 +150,8 @@ const ServicesSection = () => {
     },
     {
       icon: FaPrint,
-      title: "Projection Systems",
-      description:
-        "High-quality visual presentation equipment for business and education",
+      title: "Internship Programs",
+      description: "High-quality hands on skills through our skilled trainer",
     },
     {
       icon: FaMobile,
