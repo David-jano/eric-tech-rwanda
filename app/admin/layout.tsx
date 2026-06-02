@@ -15,6 +15,7 @@ import {
   LogOut,
   Users,
   BarChart3,
+  Megaphone,
 } from "lucide-react";
 
 export default function AdminLayout({
@@ -56,9 +57,10 @@ export default function AdminLayout({
   const navItems = [
     { href: "/admin/dashboard", icon: LayoutDashboard, label: "Dashboard" },
     { href: "/admin/products", icon: Package, label: "Products" },
+    { href: "/admin/announcements", icon: Megaphone, label: "Announcements" },
     { href: "/admin/bookings", icon: Calendar, label: "Bookings" },
     { href: "/admin/reviews", icon: Star, label: "Reviews" },
-     { href: "/admin/internships", icon: Book, label: "Internships" },
+    { href: "/admin/internships", icon: Book, label: "Internships" },
     { href: "/admin/analytics", icon: BarChart3, label: "Analytics" },
     { href: "/admin/settings", icon: Settings, label: "Settings" },
   ];
