@@ -512,7 +512,7 @@ const TrainingPrograms = () => {
         <div className="mb-16 mt-10">
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl shadow-lg border border-blue-100 overflow-hidden">
             {/* Announcement Header */}
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-4">
+            <div className="bg-blue-600 px-6 py-4">
               <div className="flex items-center justify-between flex-wrap gap-3">
                 <div className="flex items-center space-x-3">
                   <div className="bg-white/20 p-2 rounded-full">
