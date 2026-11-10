@@ -91,7 +91,7 @@ const HeroSection = () => {
               </div>
               <div className="flex items-center gap-2 text-slate-300 text-sm">
                 <GraduationCap className="w-4 h-4 text-indigo-400" />
-                <span>Learn in ECT</span>
+                <span>Learn in ETV</span>
               </div>
               <div className="flex items-center gap-2 text-slate-300 text-sm">
                 <BookAudioIcon className="w-4 h-4 text-indigo-400" />
