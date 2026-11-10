@@ -30,9 +30,7 @@ const HeroSection = () => {
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-bold leading-tight tracking-tight mb-6">
               Buy & Sell{" "}
-              <span className="bg-gradient-to-r from-indigo-300 via-purple-300 to-cyan-300 bg-clip-text text-transparent">
                 New & Used
-              </span>
               <br className="hidden lg:block" />
               {/* Image between text on mobile */}
               <div className="block lg:hidden mb-2">
