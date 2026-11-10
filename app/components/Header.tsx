@@ -56,7 +56,7 @@ const Header = () => {
               href="/EctTvetSchool"
               className="text-gray-700 hover:text-blue-600 font-medium"
             >
-              ECT TVET School
+              ERIC TECH VTC
             </Link>
             <Link
               href="/Internship"
