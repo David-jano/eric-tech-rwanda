@@ -56,7 +56,7 @@ const Header = () => {
               href="/EctTvetSchool"
               className="text-gray-700 hover:text-blue-600 font-medium"
             >
-              ERIC TECH VTC
+              Eric Tech VTC
             </Link>
             <Link
               href="/Internship"
@@ -139,7 +139,7 @@ const Header = () => {
                 className="text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                ECT TVET School
+                Eric Tech VTC
               </Link>
               <Link
                 href="/Internship"
