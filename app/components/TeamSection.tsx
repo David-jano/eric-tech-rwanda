@@ -115,16 +115,16 @@ const teamMembers = [
     role: "Branch Representative",
     description:
       "Handles customers, manages shop activities and reports to the main branch",
-    imagePath: "/profiles/1.jpeg",
+    imagePath: "/profiles/1.jpg",
     social: [
       {
         platform: "tiktok",
-        url: "https://www.tiktok.com/search?q=fiacre%20tech%202050&t=1777759042365",
+        url: "#",
         color: "#0077B5",
       },
       {
         platform: "whatsapp",
-        url: "https://wa.me/250780622639",
+        url: "https://wa.me/250798272385‬",
         color: "#25D366",
       },
       {
