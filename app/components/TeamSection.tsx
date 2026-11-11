@@ -124,7 +124,7 @@ const teamMembers = [
       },
       {
         platform: "whatsapp",
-        url: "https://wa.me/250798272385‬",
+        url:"https://wa.me/250798272385",
         color: "#25D366",
       },
       {
