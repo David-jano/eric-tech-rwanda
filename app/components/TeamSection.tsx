@@ -111,11 +111,11 @@ const teamMembers = [
   },
   {
     id: 4,
-    name: "NKUNZUMUREMYI Fiacre",
-    role: "Technicien",
+    name: "NIYIGIRA Deborah",
+    role: "Branch Representative",
     description:
-      "Dedicated to customer satisfaction with background in technical support.",
-    imagePath: "/profiles/fiacre.png",
+      "Handles customers, manages shop activities and reports to the main branch",
+    imagePath: "/profiles/1.jpeg",
     social: [
       {
         platform: "tiktok",
